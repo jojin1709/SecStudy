@@ -24,7 +24,7 @@ Track your progress, filter by platform or difficulty, save personal commands &a
 
 ---
 
-[![Open SecStudy](https://img.shields.io/badge/Launch_App-secstudy--free.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://secstudy-free.vercel.app)&nbsp;&nbsp;[![GitHub](https://img.shields.io/badge/GitHub-jojin1709-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jojin1709)&nbsp;&nbsp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-JOJIN_JOHN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jojin-john/)
+[![Open SecStudy](https://img.shields.io/badge/Launch_App-secstudy--free.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://secstudy-free.vercel.app)&nbsp;&nbsp;[![Portfolio](https://img.shields.io/badge/Portfolio-jojinjohn.me-4F46E5?style=for-the-badge)](https://www.jojinjohn.me)&nbsp;&nbsp;[![GitHub](https://img.shields.io/badge/GitHub-jojin1709-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jojin1709)&nbsp;&nbsp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-JOJIN_JOHN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jojin-john/)
 
 ---
 
@@ -176,39 +176,30 @@ flowchart TD
 | `src/hooks/useCyberVault.ts` | Local state management, `localStorage` persistence, custom resources, and JSON backup |
 | `src/components/ResourceCard.tsx` | Pure white resource card component with warm stone tags &amp; quick actions |
 | `src/components/ResourceTable.tsx` | Compact table view for high-density resource scanning |
-| `src/components/RoadmapView.tsx` | Interactive roadmap track cards with live progress bars |
+| `src/components/RoadmapView.tsx` | Sequential step-by-step pathways view with live progress bars |
+| `src/components/AboutView.tsx` | Creator profile, story, bug bounty milestones &amp; LinkedIn/portfolio links |
 | `src/components/ResourceDetailModal.tsx` | Slide-over inspector drawer for Free Access Tips, status, and personal notes |
-| `src/components/AddResourceModal.tsx` | Modal form to add custom rooms, CTFs, or tools |
-| `src/components/BackupModal.tsx` | JSON export, import, and local storage reset controls |
-| `src/types/resource.ts` | Shared TypeScript interfaces for resources, roadmaps, and backups |
+| `src/types/resource.ts` | Shared TypeScript interfaces for resources, stages, and roadmaps |
 
 ## Privacy &amp; Data Persistence
 
 > [!IMPORTANT]
-> SecStudy does **not** send your notes, progress, or custom resources to any external server. Everything stays inside your browser's `localStorage` (`cybervault_progress_v1` and `cybervault_custom_resources_v1`). Use **Backup / Import** in the sidebar to save a `.json` copy before clearing browser data.
+> SecStudy does **not** send your notes or progress to any external server. Everything stays privately inside your browser's `localStorage`.
 
 ## Common Questions
 
 ### Are all listed rooms and platforms actually free?
 
-Yes. Every item in the catalog is accessible on a free account—either 100% free forever (PortSwigger, OverTheWire, PicoCTF, CryptoHack, pwn.college, GTFOBins, HackTricks) or via verified free-tier access (TryHackMe free rooms + OpenVPN, HTB Starting Point Tier 0–1, HTB Active Machines/Challenges, HTB Academy Tier 0 / 0-Cube modules).
+Yes. Every item in the catalog is accessible on a free account—either 100% free forever (PortSwigger, OverTheWire, PicoCTF, CryptoHack, pwn.college, VulnHub, GTFOBins, HackTricks) or via verified free-tier access (TryHackMe free rooms + OpenVPN, HTB Starting Point Tier 0–1, HTB Active Machines/Challenges, HTB Academy Tier 0 / 0-Cube modules).
 
 ### Where are my notes and completed rooms stored?
 
-All status changes, bookmarks, study notes, and custom resources are saved automatically in your browser's `localStorage`.
-
-### Can I add my own TryHackMe rooms, HTB boxes, or CTF links?
-
-Yes. Click **Add Custom Resource** in the sidebar (or **Add** in the mobile header) to add any custom room, machine, CTF, or reference link with tags and difficulty.
-
-### How do I move my progress to another computer?
-
-Click **Backup / Import** in the bottom-left sidebar, export your `.json` backup file, and import it on your new device.
+All status changes, bookmarks, and study notes are saved automatically in your browser's `localStorage`.
 
 ---
 
 <div align="center">
 
-**Built by JOJIN JOHN** · [GitHub](https://github.com/jojin1709) · [LinkedIn](https://www.linkedin.com/in/jojin-john/) · [Live App](https://secstudy-free.vercel.app)
+**Built by JOJIN JOHN** · [Portfolio](https://www.jojinjohn.me) · [GitHub](https://github.com/jojin1709) · [LinkedIn](https://www.linkedin.com/in/jojin-john/) · [Live App](https://secstudy-free.vercel.app)
 
 </div>
