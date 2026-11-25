@@ -546,7 +546,14 @@ export default function HomePage() {
 
         <div className="pt-1 text-center text-[11px] text-stone-500">
           Developed by{" "}
-          <span className="font-semibold text-stone-800">JOJIN JOHN</span>
+          <a
+            href="https://www.linkedin.com/in/jojin-john/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-stone-800 underline decoration-stone-300 underline-offset-2 hover:text-[#4F46E5]"
+          >
+            JOJIN JOHN
+          </a>
         </div>
       </div>
     </div>
@@ -952,9 +959,14 @@ export default function HomePage() {
             <span>SecStudy — Free Cybersecurity Rooms, HTB Labs &amp; CTFs</span>
             <span>
               Developed by{" "}
-              <strong className="font-semibold text-[#4F46E5]">
+              <a
+                href="https://www.linkedin.com/in/jojin-john/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#4F46E5] hover:underline"
+              >
                 JOJIN JOHN
-              </strong>
+              </a>
             </span>
           </div>
         </footer>

@@ -16,17 +16,15 @@
 
 Track your progress, filter by platform or difficulty, save personal commands &amp; study notes, and follow guided zero-cost tracks from beginner to specialist. **100% free resources, 100% local privacy.**
 
-<p><strong>Run SecStudy Locally</strong></p>
+<p><strong>Use SecStudy Instantly — No Install or Sign-Up Required</strong></p>
 
-```bash
-git clone https://github.com/jojin1709/SecStudy.git && cd SecStudy && npm install && npm run dev
-```
+### 👉 [Open SecStudy Web App (`secstudy-free.vercel.app`)](https://secstudy-free.vercel.app)
 
-<sub>Open <code>http://localhost:3000</code> in your browser to launch your workspace, or try the <a href="https://secstudy-free.vercel.app"><strong>Live App</strong></a>.</sub>
+<sub>Open directly in any browser to access all 56 free TryHackMe rooms, Hack The Box labs, CTFs, tools, and roadmaps.</sub>
 
 ---
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-secstudy--free.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://secstudy-free.vercel.app)&nbsp;&nbsp;[![Developer](https://img.shields.io/badge/Developed_by-JOJIN_JOHN-4F46E5?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jojin1709)
+[![Open SecStudy](https://img.shields.io/badge/Launch_App-secstudy--free.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://secstudy-free.vercel.app)&nbsp;&nbsp;[![GitHub](https://img.shields.io/badge/GitHub-jojin1709-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jojin1709)&nbsp;&nbsp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-JOJIN_JOHN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jojin-john/)
 
 ---
 
@@ -40,12 +38,10 @@ git clone https://github.com/jojin1709/SecStudy.git && cd SecStudy && npm instal
 - [Table of Contents](#table-of-contents)
 - [What is SecStudy?](#what-is-secstudy)
   - [Why SecStudy Exists](#why-secstudy-exists)
-  - [Why Glassmorphism Instead of a Terminal Theme?](#why-glassmorphism-instead-of-a-terminal-theme)
+  - [Why a Clean Warm Cream Theme Instead of a Terminal Theme?](#why-a-clean-warm-cream-theme-instead-of-a-terminal-theme)
   - [Who Is It Built For?](#who-is-it-built-for)
 - [Curated Free Catalog](#curated-free-catalog)
-- [Quick Start](#quick-start)
-  - [Prerequisites](#prerequisites)
-  - [Install &amp; Launch](#install--launch)
+- [How to Use SecStudy](#how-to-use-secstudy)
 - [Key Capabilities](#key-capabilities)
 - [Guided Study Roadmaps](#guided-study-roadmaps)
 - [Architecture](#architecture)
@@ -73,11 +69,11 @@ SecStudy curates those free resources accurately in one structured hub so you sp
 
 </details>
 
-<a id="why-glassmorphism-instead-of-a-terminal-theme"></a>
+<a id="why-a-clean-warm-cream-theme-instead-of-a-terminal-theme"></a>
 <details>
-<summary><strong>Why Glassmorphism Instead of a Terminal Theme?</strong></summary>
+<summary><strong>Why a Clean Warm Cream Theme Instead of a Terminal Theme?</strong></summary>
 
-Many cybersecurity tools default to dark matrix/cyberpunk themes that feel visually cluttered during long study sessions. SecStudy uses a clean, airy **Glassmorphism UI**—frosted translucent panels, crisp typography, and minimal cards—alongside both **Grid** and **Compact Table** views so scanning 50+ labs stays effortless.
+Many cybersecurity tools default to dark matrix/cyberpunk themes that feel visually cluttered during long study sessions. SecStudy uses a calm **warm cream (`#F6F4EE`) &amp; subtle topographical contour** workspace with pure white cards, crisp typography, and both **Grid** and **Compact Table** views so scanning 50+ labs stays effortless.
 
 </details>
 
@@ -102,40 +98,31 @@ SecStudy ships with **56 verified free resources** out of the box:
 | **CTFs &amp; Wargames** | 9 | OverTheWire (`Bandit`, `Natas`), PicoCTF, PortSwigger Web Security Academy, CryptoHack, pwn.college, CTFtime, LetsDefend Free Tier, CyberDefenders | 100% free forever / Free tier |
 | **Tools &amp; Cheat Sheets** | 8 | GTFOBins, LOLBAS, HackTricks, PayloadsAllTheThings, CyberChef, Online RevShell Generator, Burp Suite Community, Exploit-DB | 100% free open tools &amp; wikis |
 
-## Quick Start
+## How to Use SecStudy
 
-### Prerequisites
+No installation, terminal setup, or account is required—everything runs right in your browser:
 
-- **Node.js 20+** (LTS recommended) and **npm**
-- **Git** (optional, if cloning via CLI)
+1. **Open the live site:** Go to **[https://secstudy-free.vercel.app](https://secstudy-free.vercel.app)**.
+2. **Pick your platform or roadmap:** Browse **TryHackMe**, **Hack The Box**, **CTFs &amp; Wargames**, **Tools &amp; Docs**, or follow one of the 5 **Roadmaps**.
+3. **Track your progress &amp; notes:** Click any card to view its **Free Access Tip**, mark it `Todo` / `In Progress` / `Completed`, bookmark favorites, and save personal commands/notes locally in your browser.
+4. **Access free labs:** Click **Open** on any resource to jump straight to the official free room, lab, or tool.
 
-### Install &amp; Launch
+<details>
+<summary><strong>For Developers: Running Locally (Optional)</strong></summary>
+
+If you want to contribute or customize the source code locally (requires Node.js 20+):
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/jojin1709/SecStudy.git
-cd SecStudy
-
-# 2. Install dependencies
 npm install
-
-# 3. Start the development server
 npm run dev
 ```
 
-Open **`http://localhost:3000`** in your browser.
-
-For a production build:
-
-```bash
-npm run build
-npm start
-```
+</details>
 
 ## Key Capabilities
 
-- **Floating Sidebar &amp; Instant Search**: Filter by platform (`TryHackMe`, `Hack The Box`, `CTFs & Wargames`, `Tools & Docs`), workspace view (`Roadmaps`, `In Progress`, `Bookmarked`, `Free Playbook`), or press `/` to jump straight to instant search.
-- **Grid &amp; Compact Table Views**: Switch between rich frosted resource cards and a high-density table view for scanning all labs at once.
+- **Instant Browser Access &amp; Search**: Open `https://secstudy-free.vercel.app`, filter by platform (`TryHackMe`, `Hack The Box`, `CTFs & Wargames`, `Tools & Docs`) or workspace (`Roadmaps`, `In Progress`, `Bookmarked`, `Free Playbook`), or press `/` to jump straight to search.
+- **Grid &amp; Compact Table Views**: Switch between clean white resource cards and a high-density table view for scanning all labs at once.
 - **Multi-Facet Filtering &amp; Sorting**: Filter by category (`Web Security`, `Linux & PrivEsc`, `Windows & AD`, `Cryptography`, `Binary & Pwn`, `Defensive & SOC`, etc.), difficulty (`Beginner` to `Hard`), and completion status.
 - **Slide-Over Detail &amp; Notes Drawer**: Click any item to inspect its **Free Access Tip**, covered skills, status selector, bookmark toggle, and personal Markdown/command notes editor.
 - **Custom Resource Manager**: Add your own TryHackMe rooms, HTB boxes, CTF events, or tools directly into your local vault.
@@ -163,7 +150,7 @@ flowchart TD
     LS["Browser localStorage<br/>(Progress · Notes · Custom Items)"] <--> HOOK
     JSON["Portable JSON Backup<br/>(Export / Import)"] <--> HOOK
 
-    HOOK --> SHELL["Glassmorphism App Shell<br/>(Sidebar · Search · Filters)"]
+    HOOK --> SHELL["Warm Cream &amp; Topographical Shell<br/>(Sidebar · Search · Filters)"]
     SHELL --> GRID["Grid Cards &amp; Compact Table"]
     SHELL --> ROAD["Guided Roadmaps View"]
     SHELL --> PLAY["Free Access Playbook"]
@@ -175,13 +162,14 @@ flowchart TD
 
 | Path | Purpose |
 | --- | --- |
-| `src/app/page.tsx` | Main Glassmorphism workspace, sidebar navigation, search, filters, and Free Playbook |
-| `src/app/layout.tsx` | Root Next.js layout, metadata, and Google Fonts (`Inter` &amp; `JetBrains Mono`) |
-| `src/app/globals.css` | Ambient gradient backdrop and frosted `.glass-panel` / `.glass-card` styles |
+| `src/app/page.tsx` | Main workspace, white sidebar &amp; navbar, search, filters, and Free Playbook |
+| `src/app/layout.tsx` | Root Next.js layout, metadata, OpenGraph config, and Google Fonts (`Inter` &amp; `JetBrains Mono`) |
+| `src/app/opengraph-image.tsx` | Dynamic social preview card for `secstudy-free.vercel.app` |
+| `src/app/globals.css` | Warm cream (`#F6F4EE`) &amp; seamless SVG topographical contour pattern (`.topo-canvas`) |
 | `src/data/resources.ts` | 56 curated free resources across TryHackMe, Hack The Box, CTFs, and tools |
 | `src/data/roadmaps.ts` | 5 structured study roadmaps linked to catalog resource IDs |
 | `src/hooks/useCyberVault.ts` | Local state management, `localStorage` persistence, custom resources, and JSON backup |
-| `src/components/ResourceCard.tsx` | Frosted resource card component with status cycling and quick actions |
+| `src/components/ResourceCard.tsx` | Pure white resource card component with warm stone tags &amp; quick actions |
 | `src/components/ResourceTable.tsx` | Compact table view for high-density resource scanning |
 | `src/components/RoadmapView.tsx` | Interactive roadmap track cards with live progress bars |
 | `src/components/ResourceDetailModal.tsx` | Slide-over inspector drawer for Free Access Tips, status, and personal notes |
@@ -216,6 +204,6 @@ Click **Backup / Import** in the bottom-left sidebar, export your `.json` backup
 
 <div align="center">
 
-**Built by [JOJIN JOHN](https://github.com/jojin1709)**
+**Built by JOJIN JOHN** · [GitHub](https://github.com/jojin1709) · [LinkedIn](https://www.linkedin.com/in/jojin-john/) · [Live App](https://secstudy-free.vercel.app)
 
 </div>
