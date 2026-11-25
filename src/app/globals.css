@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  color: #0f172a;
+  background-color: #f1f5ff;
+  background-image:
+    radial-gradient(at 8% 12%, rgba(99, 102, 241, 0.22) 0px, transparent 42%),
+    radial-gradient(at 88% 8%, rgba(56, 189, 248, 0.24) 0px, transparent 40%),
+    radial-gradient(at 75% 85%, rgba(244, 114, 182, 0.16) 0px, transparent 45%),
+    radial-gradient(at 15% 85%, rgba(167, 139, 250, 0.18) 0px, transparent 45%),
+    linear-gradient(135deg, #eef2ff 0%, #f8fafc 50%, #e0f2fe 100%);
+  background-attachment: fixed;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 8px 32px rgba(30, 41, 59, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 6px 24px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow:
+    0 12px 32px rgba(79, 70, 229, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}
