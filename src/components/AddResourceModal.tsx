@@ -21,6 +21,7 @@ interface AddResourceModalProps {
 const PLATFORMS: Platform[] = [
   "TryHackMe",
   "Hack The Box",
+  "VulnHub",
   "Bug Bounty & Web",
   "CTFs & Wargames",
   "Blue Team & Cloud",
@@ -50,6 +51,7 @@ const FREE_STATUSES: FreeTierBadge[] = [
   "Free Account + OpenVPN",
   "Free Tier / 0 Cubes",
   "Free Active Pool",
+  "Free Downloadable VM",
   "Pay-What-You-Can ($0+)",
 ];
 
@@ -101,6 +103,7 @@ export function AddResourceModal({
     onAdd({
       title: title.trim(),
       platform,
+      stage: "Stage 3: Easy CTFs & Boot2Root",
       resourceType,
       category,
       difficulty,
@@ -200,6 +203,7 @@ export function AddResourceModal({
                 <option value="Starting Point">Starting Point</option>
                 <option value="Machine Pool">Machine Pool</option>
                 <option value="Academy Module">Academy Module</option>
+                <option value="VulnHub VM">VulnHub VM</option>
                 <option value="Bug Bounty Lab">Bug Bounty Lab</option>
                 <option value="CTF Platform">CTF Platform</option>
                 <option value="Wargame">Wargame</option>

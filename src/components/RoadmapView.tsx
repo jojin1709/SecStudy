@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import {
   ArrowUpRight,
   CheckCircle2,
   Circle,
+  Compass,
   PlayCircle,
 } from "lucide-react";
 import { STUDY_ROADMAPS } from "@/data/roadmaps";
@@ -14,6 +16,7 @@ interface RoadmapViewProps {
   getProgress: (id: string) => ResourceProgress;
   onCycleStatus: (id: string) => void;
   onOpenDetails: (resource: CyberResource) => void;
+  onBrowseAll: () => void;
 }
 
 const ACCENT_MAP = {
@@ -37,21 +40,81 @@ export function RoadmapView({
   getProgress,
   onCycleStatus,
   onOpenDetails,
+  onBrowseAll,
 }: RoadmapViewProps) {
+  const [selectedId, setSelectedId] = useState<string>(
+    STUDY_ROADMAPS[0]?.id ?? "all"
+  );
+
+  const visibleRoadmaps =
+    selectedId === "all"
+      ? STUDY_ROADMAPS
+      : STUDY_ROADMAPS.filter((r) => r.id === selectedId);
+
   return (
     <div className="space-y-5">
-      <div>
-        <h2 className="text-xl font-bold text-stone-900">
-          Guided Study Roadmaps
-        </h2>
-        <p className="mt-1 text-sm text-stone-600">
-          Step-by-step free tracks combining TryHackMe, Hack The Box, wargames,
-          and tools. Click any item to inspect notes or mark progress.
-        </p>
+      {/* Start Here Header Card */}
+      <div className="rounded-2xl border border-[#EAE6DD] bg-white p-5 shadow-[0_2px_6px_rgba(28,25,23,0.03)]">
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+          <div>
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-[#4F46E5]/10 px-2.5 py-0.5 text-[11px] font-semibold text-[#4F46E5]">
+              <Compass className="h-3.5 w-3.5" />
+              Start Here · Step-by-Step Pathways
+            </div>
+            <h1 className="mt-2 text-2xl font-bold tracking-tight text-stone-900">
+              Choose Your Career or Bug Bounty Path
+            </h1>
+            <p className="mt-1 text-xs text-stone-600">
+              Pick a goal below and follow the numbered steps in order. Click
+              any room to read its Free Access Tip, save notes, or mark it Done.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={onBrowseAll}
+            className="shrink-0 rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] px-3.5 py-2 text-xs font-semibold text-stone-700 transition hover:bg-[#EAE6DD]"
+          >
+            Browse All {resourcesById.size} Labs →
+          </button>
+        </div>
+
+        {/* Pathway Goal Tabs */}
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {STUDY_ROADMAPS.map((r) => {
+            const active = selectedId === r.id;
+            return (
+              <button
+                key={r.id}
+                type="button"
+                onClick={() => setSelectedId(r.id)}
+                className={`rounded-xl px-3 py-1.5 text-xs font-medium transition ${
+                  active
+                    ? "bg-[#4F46E5] text-white shadow-sm"
+                    : "border border-[#EAE6DD] bg-[#F4F2EC] text-stone-700 hover:bg-[#EAE6DD]"
+                }`}
+              >
+                {r.title}
+              </button>
+            );
+          })}
+          <button
+            type="button"
+            onClick={() => setSelectedId("all")}
+            className={`rounded-xl px-3 py-1.5 text-xs font-medium transition ${
+              selectedId === "all"
+                ? "bg-[#4F46E5] text-white shadow-sm"
+                : "border border-[#EAE6DD] bg-[#F4F2EC] text-stone-700 hover:bg-[#EAE6DD]"
+            }`}
+          >
+            View All ({STUDY_ROADMAPS.length})
+          </button>
+        </div>
       </div>
 
+      {/* Selected Pathway Cards */}
       <div className="grid gap-5">
-        {STUDY_ROADMAPS.map((roadmap) => {
+        {visibleRoadmaps.map((roadmap) => {
           const allIds = roadmap.steps.flatMap((s) => s.resourceIds);
           const uniqueIds = Array.from(new Set(allIds));
           const completedCount = uniqueIds.filter(
@@ -74,9 +137,9 @@ export function RoadmapView({
                   >
                     {roadmap.targetRole}
                   </span>
-                  <h3 className="mt-2 text-lg font-bold text-stone-900">
+                  <h2 className="mt-2 text-lg font-bold text-stone-900">
                     {roadmap.title}
-                  </h3>
+                  </h2>
                   <p className="mt-1 text-xs text-stone-600">
                     {roadmap.subtitle}
                   </p>
@@ -84,7 +147,7 @@ export function RoadmapView({
 
                 <div className="min-w-[190px]">
                   <div className="flex items-center justify-between text-xs text-stone-600">
-                    <span>Completed</span>
+                    <span>Path Progress</span>
                     <span className="font-mono font-semibold text-stone-900">
                       {completedCount}/{uniqueIds.length} ({pct}%)
                     </span>
@@ -98,81 +161,101 @@ export function RoadmapView({
                 </div>
               </div>
 
-              <div className="mt-5 grid gap-4 md:grid-cols-2">
-                {roadmap.steps.map((step) => (
-                  <div
-                    key={step.id}
-                    className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-4"
-                  >
-                    <h4 className="text-sm font-semibold text-stone-900">
-                      {step.title}
-                    </h4>
-                    <p className="mt-1 text-xs leading-relaxed text-stone-600">
-                      {step.summary}
-                    </p>
+              {/* Sequential Step-by-Step Timeline */}
+              <div className="mt-5 space-y-4">
+                {roadmap.steps.map((step) => {
+                  const stepDone = step.resourceIds.filter(
+                    (id) => getProgress(id).status === "completed"
+                  ).length;
 
-                    <div className="mt-3 space-y-1.5">
-                      {step.resourceIds.map((resId) => {
-                        const res = resourcesById.get(resId);
-                        if (!res) return null;
-                        const p = getProgress(res.id);
-                        const StatusIcon =
-                          p.status === "completed"
-                            ? CheckCircle2
-                            : p.status === "in_progress"
-                              ? PlayCircle
-                              : Circle;
+                  return (
+                    <div
+                      key={step.id}
+                      className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-4"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h3 className="text-sm font-bold text-stone-900">
+                          {step.title}
+                        </h3>
+                        <span className="rounded-full bg-white px-2.5 py-0.5 font-mono text-[11px] font-semibold text-stone-600">
+                          {stepDone}/{step.resourceIds.length} done
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs leading-relaxed text-stone-600">
+                        {step.summary}
+                      </p>
 
-                        return (
-                          <div
-                            key={res.id}
-                            className="flex items-center justify-between gap-2 rounded-xl bg-white px-2.5 py-1.5 text-xs transition hover:bg-[#FAF9F5]"
-                          >
-                            <div className="flex min-w-0 items-center gap-2">
-                              <button
-                                type="button"
-                                onClick={() => onCycleStatus(res.id)}
-                                title="Cycle status"
-                                className={`shrink-0 ${
-                                  p.status === "completed"
-                                    ? "text-emerald-600"
-                                    : p.status === "in_progress"
-                                      ? "text-[#4F46E5]"
-                                      : "text-stone-400 hover:text-stone-700"
-                                }`}
-                              >
-                                <StatusIcon className="h-4 w-4" />
-                              </button>
+                      <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                        {step.resourceIds.map((resId, index) => {
+                          const res = resourcesById.get(resId);
+                          if (!res) return null;
+                          const p = getProgress(res.id);
+                          const StatusIcon =
+                            p.status === "completed"
+                              ? CheckCircle2
+                              : p.status === "in_progress"
+                                ? PlayCircle
+                                : Circle;
 
-                              <button
-                                type="button"
-                                onClick={() => onOpenDetails(res)}
-                                className="truncate text-left font-medium text-stone-800 hover:text-[#4F46E5]"
-                              >
-                                {res.title}
-                              </button>
+                          return (
+                            <div
+                              key={res.id}
+                              className="flex items-center justify-between gap-2 rounded-xl border border-[#EAE6DD] bg-white px-3 py-2 text-xs transition hover:border-[#D8D2C5]"
+                            >
+                              <div className="flex min-w-0 items-center gap-2">
+                                <button
+                                  type="button"
+                                  onClick={() => onCycleStatus(res.id)}
+                                  title="Click to cycle status"
+                                  className={`shrink-0 ${
+                                    p.status === "completed"
+                                      ? "text-emerald-600"
+                                      : p.status === "in_progress"
+                                        ? "text-[#4F46E5]"
+                                        : "text-stone-400 hover:text-stone-700"
+                                  }`}
+                                >
+                                  <StatusIcon className="h-4 w-4" />
+                                </button>
+
+                                <span className="shrink-0 font-mono text-[11px] font-semibold text-stone-400">
+                                  #{index + 1}
+                                </span>
+
+                                <button
+                                  type="button"
+                                  onClick={() => onOpenDetails(res)}
+                                  className={`truncate text-left font-medium hover:text-[#4F46E5] ${
+                                    p.status === "completed"
+                                      ? "text-stone-500 line-through"
+                                      : "text-stone-800"
+                                  }`}
+                                >
+                                  {res.title}
+                                </button>
+                              </div>
+
+                              <div className="flex shrink-0 items-center gap-1.5">
+                                <span className="hidden rounded bg-[#F4F2EC] px-1.5 py-0.5 text-[10px] font-medium text-stone-600 md:inline">
+                                  {res.platform}
+                                </span>
+                                <a
+                                  href={res.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="rounded-md p-1 text-stone-400 hover:bg-[#F4F2EC] hover:text-[#4F46E5]"
+                                  title="Open official resource"
+                                >
+                                  <ArrowUpRight className="h-3.5 w-3.5" />
+                                </a>
+                              </div>
                             </div>
-
-                            <div className="flex shrink-0 items-center gap-2">
-                              <span className="hidden text-[11px] text-stone-500 sm:inline">
-                                {res.platform}
-                              </span>
-                              <a
-                                href={res.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-stone-400 hover:text-[#4F46E5]"
-                                title="Open official resource"
-                              >
-                                <ArrowUpRight className="h-3.5 w-3.5" />
-                              </a>
-                            </div>
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           );

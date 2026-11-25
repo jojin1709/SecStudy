@@ -1,10 +1,21 @@
 export type Platform =
   | "TryHackMe"
   | "Hack The Box"
+  | "VulnHub"
   | "Bug Bounty & Web"
   | "CTFs & Wargames"
   | "Blue Team & Cloud"
   | "Tools & Career Prep";
+
+export type LearningStage =
+  | "Stage 1: Foundations & OS"
+  | "Stage 2: Networking & Core Tools"
+  | "Stage 3: Easy CTFs & Boot2Root"
+  | "Stage 4: Web & Bug Bounty"
+  | "Stage 5: AD, Medium & Pivoting"
+  | "Stage 6: VulnHub Offline VMs"
+  | "Stage 7: Blue Team, SOC & Cloud"
+  | "Stage 8: Pwn, Crypto & Career";
 
 export type Category =
   | "Fundamentals & OS"
@@ -28,6 +39,7 @@ export type FreeTierBadge =
   | "Free Account + OpenVPN"
   | "Free Tier / 0 Cubes"
   | "Free Active Pool"
+  | "Free Downloadable VM"
   | "Pay-What-You-Can ($0+)";
 
 export type ProgressStatus = "todo" | "in_progress" | "completed";
@@ -36,12 +48,14 @@ export interface CyberResource {
   id: string;
   title: string;
   platform: Platform;
+  stage: LearningStage;
   resourceType:
     | "Room"
     | "Learning Path"
     | "Starting Point"
     | "Machine Pool"
     | "Academy Module"
+    | "VulnHub VM"
     | "Bug Bounty Lab"
     | "CTF Platform"
     | "Wargame"

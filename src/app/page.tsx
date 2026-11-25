@@ -30,6 +30,7 @@ import {
   Category,
   CyberResource,
   Difficulty,
+  LearningStage,
   Platform,
   ProgressStatus,
 } from "@/types/resource";
@@ -45,6 +46,18 @@ type ActiveNav =
 type ViewMode = "grid" | "list";
 type StatusFilter = "all" | ProgressStatus;
 type SortOption = "recommended" | "difficulty" | "title" | "status";
+
+const STAGES: ("All" | LearningStage)[] = [
+  "All",
+  "Stage 1: Foundations & OS",
+  "Stage 2: Networking & Core Tools",
+  "Stage 3: Easy CTFs & Boot2Root",
+  "Stage 4: Web & Bug Bounty",
+  "Stage 5: AD, Medium & Pivoting",
+  "Stage 6: VulnHub Offline VMs",
+  "Stage 7: Blue Team, SOC & Cloud",
+  "Stage 8: Pwn, Crypto & Career",
+];
 
 const CATEGORIES: ("All" | Category)[] = [
   "All",
@@ -87,7 +100,7 @@ const STATUS_RANK: Record<ProgressStatus, number> = {
 const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   all: {
     title: "All Free Resources",
-    subtitle: "99+ curated TryHackMe rooms, HTB labs, bug bounty targets, CTFs, cloud & career tracks.",
+    subtitle: "126 curated TryHackMe rooms, HTB labs, VulnHub VMs, Bug Bounty targets, CTFs, Cloud & Career tracks.",
   },
   TryHackMe: {
     title: "TryHackMe Free Rooms & Paths",
@@ -96,6 +109,10 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   "Hack The Box": {
     title: "Hack The Box Free Labs",
     subtitle: "Starting Point Tier 0-2, Active Machines Pool, Challenges & 58 Tier 0 Academy modules.",
+  },
+  VulnHub: {
+    title: "VulnHub Free Offline VMs",
+    subtitle: "Downloadable OSCP-style VirtualBox/VMware Boot2Root labs (Kioptrix, DC-1, Stapler, Symfonos, Mr-Robot).",
   },
   "Bug Bounty & Web": {
     title: "Bug Bounty & Web AppSec",
@@ -122,8 +139,8 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
     subtitle: "Active rooms and labs you are currently working through.",
   },
   roadmaps: {
-    title: "Guided Career & Skill Roadmaps",
-    subtitle: "6 structured zero-cost tracks for Job Readiness, Bug Bounty, Pentesting, SOC, Cloud & Pwn.",
+    title: "Start Here: Guided Pathways",
+    subtitle: "7 structured zero-cost pathways showing exactly where to start and which lab to do next.",
   },
   playbook: {
     title: "Free Access Playbook",
@@ -147,11 +164,12 @@ export default function HomePage() {
     resetAllData,
   } = useCyberVault();
 
-  const [activeNav, setActiveNav] = useState<ActiveNav>("all");
+  const [activeNav, setActiveNav] = useState<ActiveNav>("roadmaps");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedStage, setSelectedStage] = useState<"All" | LearningStage>("All");
   const [selectedCategory, setSelectedCategory] = useState<"All" | Category>("All");
   const [selectedDifficulty, setSelectedDifficulty] = useState<"All" | Difficulty>("All");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
@@ -190,6 +208,7 @@ export default function HomePage() {
     const counts: Record<Platform, number> = {
       TryHackMe: 0,
       "Hack The Box": 0,
+      VulnHub: 0,
       "Bug Bounty & Web": 0,
       "CTFs & Wargames": 0,
       "Blue Team & Cloud": 0,
@@ -210,6 +229,7 @@ export default function HomePage() {
       if (
         activeNav === "TryHackMe" ||
         activeNav === "Hack The Box" ||
+        activeNav === "VulnHub" ||
         activeNav === "Bug Bounty & Web" ||
         activeNav === "CTFs & Wargames" ||
         activeNav === "Blue Team & Cloud" ||
@@ -224,6 +244,9 @@ export default function HomePage() {
         return false;
       }
 
+      if (selectedStage !== "All" && item.stage !== selectedStage) {
+        return false;
+      }
       if (selectedCategory !== "All" && item.category !== selectedCategory) {
         return false;
       }
@@ -273,6 +296,7 @@ export default function HomePage() {
     allResources,
     activeNav,
     searchQuery,
+    selectedStage,
     selectedCategory,
     selectedDifficulty,
     statusFilter,
@@ -282,12 +306,14 @@ export default function HomePage() {
 
   const hasActiveFilters =
     searchQuery.trim() !== "" ||
+    selectedStage !== "All" ||
     selectedCategory !== "All" ||
     selectedDifficulty !== "All" ||
     statusFilter !== "all";
 
   const clearFilters = () => {
     setSearchQuery("");
+    setSelectedStage("All");
     setSelectedCategory("All");
     setSelectedDifficulty("All");
     setStatusFilter("all");
@@ -353,9 +379,48 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Start Here */}
+        <div>
+          <div className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-wider text-stone-400">
+            Start Here
+          </div>
+          <nav className="space-y-1">
+            <button
+              type="button"
+              onClick={() => selectNav("roadmaps")}
+              className={navItemClass("roadmaps")}
+            >
+              <span className="flex items-center gap-2.5">
+                <Compass className="h-4 w-4" />
+                Guided Pathways
+              </span>
+              <span
+                className={`font-mono text-[11px] ${
+                  activeNav === "roadmaps"
+                    ? "text-indigo-100"
+                    : "text-stone-400"
+                }`}
+              >
+                {STUDY_ROADMAPS.length}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => selectNav("playbook")}
+              className={navItemClass("playbook")}
+            >
+              <span className="flex items-center gap-2.5">
+                <Flag className="h-4 w-4" />
+                Free Access Guide
+              </span>
+            </button>
+          </nav>
+        </div>
+
         {/* Platforms */}
         <div>
-          <div className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+          <div className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-wider text-stone-400">
             Platforms
           </div>
           <nav className="space-y-1">
@@ -370,7 +435,7 @@ export default function HomePage() {
               </span>
               <span
                 className={`font-mono text-[11px] ${
-                  activeNav === "all" ? "text-indigo-100" : "text-slate-400"
+                  activeNav === "all" ? "text-indigo-100" : "text-stone-400"
                 }`}
               >
                 {allResources.length}
@@ -390,7 +455,7 @@ export default function HomePage() {
                 className={`font-mono text-[11px] ${
                   activeNav === "TryHackMe"
                     ? "text-indigo-100"
-                    : "text-slate-400"
+                    : "text-stone-400"
                 }`}
               >
                 {platformCounts.TryHackMe}
@@ -410,10 +475,30 @@ export default function HomePage() {
                 className={`font-mono text-[11px] ${
                   activeNav === "Hack The Box"
                     ? "text-indigo-100"
-                    : "text-slate-400"
+                    : "text-stone-400"
                 }`}
               >
                 {platformCounts["Hack The Box"]}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => selectNav("VulnHub")}
+              className={navItemClass("VulnHub")}
+            >
+              <span className="flex items-center gap-2.5">
+                <span className="h-2 w-2 rounded-full bg-orange-500" />
+                VulnHub VMs
+              </span>
+              <span
+                className={`font-mono text-[11px] ${
+                  activeNav === "VulnHub"
+                    ? "text-indigo-100"
+                    : "text-stone-400"
+                }`}
+              >
+                {platformCounts.VulnHub}
               </span>
             </button>
 
@@ -430,7 +515,7 @@ export default function HomePage() {
                 className={`font-mono text-[11px] ${
                   activeNav === "Bug Bounty & Web"
                     ? "text-indigo-100"
-                    : "text-slate-400"
+                    : "text-stone-400"
                 }`}
               >
                 {platformCounts["Bug Bounty & Web"]}
@@ -450,7 +535,7 @@ export default function HomePage() {
                 className={`font-mono text-[11px] ${
                   activeNav === "CTFs & Wargames"
                     ? "text-indigo-100"
-                    : "text-slate-400"
+                    : "text-stone-400"
                 }`}
               >
                 {platformCounts["CTFs & Wargames"]}
@@ -470,7 +555,7 @@ export default function HomePage() {
                 className={`font-mono text-[11px] ${
                   activeNav === "Blue Team & Cloud"
                     ? "text-indigo-100"
-                    : "text-slate-400"
+                    : "text-stone-400"
                 }`}
               >
                 {platformCounts["Blue Team & Cloud"]}
@@ -490,7 +575,7 @@ export default function HomePage() {
                 className={`font-mono text-[11px] ${
                   activeNav === "Tools & Career Prep"
                     ? "text-indigo-100"
-                    : "text-slate-400"
+                    : "text-stone-400"
                 }`}
               >
                 {platformCounts["Tools & Career Prep"]}
@@ -499,31 +584,12 @@ export default function HomePage() {
           </nav>
         </div>
 
-        {/* Workspace */}
+        {/* My Study */}
         <div>
-          <div className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-            Study Workspace
+          <div className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-wider text-stone-400">
+            My Study
           </div>
           <nav className="space-y-1">
-            <button
-              type="button"
-              onClick={() => selectNav("roadmaps")}
-              className={navItemClass("roadmaps")}
-            >
-              <span className="flex items-center gap-2.5">
-                <Compass className="h-4 w-4" />
-                Roadmaps
-              </span>
-              <span
-                className={`font-mono text-[11px] ${
-                  activeNav === "roadmaps"
-                    ? "text-indigo-100"
-                    : "text-slate-400"
-                }`}
-              >
-                {STUDY_ROADMAPS.length}
-              </span>
-            </button>
 
             <button
               type="button"
@@ -746,6 +812,23 @@ export default function HomePage() {
                 {/* Warm Stone Filter Dropdowns */}
                 <div className="flex flex-wrap items-center gap-2">
                   <select
+                    aria-label="Learning stage filter"
+                    value={selectedStage}
+                    onChange={(e) =>
+                      setSelectedStage(
+                        e.target.value as "All" | LearningStage
+                      )
+                    }
+                    className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] px-3 py-1.5 text-xs font-medium text-stone-700 focus:border-[#4F46E5] focus:bg-white focus:outline-none"
+                  >
+                    {STAGES.map((stage) => (
+                      <option key={stage} value={stage}>
+                        {stage === "All" ? "All Stages (Order)" : stage}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
                     aria-label="Category filter"
                     value={selectedCategory}
                     onChange={(e) =>
@@ -886,6 +969,7 @@ export default function HomePage() {
               getProgress={getProgress}
               onCycleStatus={cycleStatus}
               onOpenDetails={setSelectedResource}
+              onBrowseAll={() => setActiveNav("all")}
             />
           )}
 

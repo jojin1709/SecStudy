@@ -29,6 +29,7 @@ interface ResourceTableProps {
 const PLATFORM_DOT: Record<Platform, string> = {
   TryHackMe: "bg-rose-500",
   "Hack The Box": "bg-emerald-500",
+  VulnHub: "bg-orange-500",
   "Bug Bounty & Web": "bg-violet-500",
   "CTFs & Wargames": "bg-sky-500",
   "Blue Team & Cloud": "bg-teal-500",

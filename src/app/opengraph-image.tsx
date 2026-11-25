@@ -93,8 +93,8 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            99 curated free resources across TryHackMe, Hack The Box, Bug
-            Bounty, CTFs, Blue Team, Cloud, and 6 career roadmaps.
+            126 curated free resources across TryHackMe, Hack The Box, VulnHub,
+            PortSwigger (all 32 topics), CTFs, Cloud, AI Security &amp; 7 pathways.
           </span>
         </div>
 

@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "Organize and track 100% free TryHackMe rooms, Hack The Box labs, CTFs, wargames, tools, and study roadmaps.",
   authors: [{ name: "JOJIN JOHN" }],
   openGraph: {
-    title: "SecStudy — Free Cybersecurity Rooms, HTB Labs & CTFs",
+    title: "SecStudy — Free Cybersecurity Rooms, HTB Labs, VulnHub & CTFs",
     description:
-      "99 verified free TryHackMe rooms, Hack The Box labs, Bug Bounty targets, CTFs, Blue Team/Cloud labs, and 6 career roadmaps.",
+      "126 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, all 32 PortSwigger topics, CTFs, Blue Team/Cloud labs, and 7 guided pathways.",
     url: "https://secstudy-free.vercel.app",
     siteName: "SecStudy",
     type: "website",
