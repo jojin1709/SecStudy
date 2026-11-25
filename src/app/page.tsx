@@ -338,16 +338,27 @@ export default function HomePage() {
         {/* Brand */}
         <div className="flex items-center justify-between px-1">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-sky-500 text-white shadow-md shadow-indigo-500/20">
-              <ShieldCheck className="h-5 w-5" />
-            </div>
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="shrink-0"
+              aria-hidden="true"
+            >
+              <rect width="64" height="64" rx="14" fill="#0B1120" />
+              <polygon points="34,14 51,14 34,25" fill="#FFFFFF" />
+              <polygon points="17,24 30,16 30,27 17,35" fill="#FFFFFF" />
+              <polygon points="18,37.5 31,29.5 46,32.5 33,40.5" fill="#FFFFFF" />
+              <polygon points="34,42.5 47,34.5 47,45.5 34,53.5" fill="#FFFFFF" />
+              <polygon points="30,42.5 30,53.5 13,53.5" fill="#FFFFFF" />
+            </svg>
             <div>
-              <div className="text-sm font-bold tracking-tight text-slate-900">
+              <div className="text-base font-bold leading-tight tracking-tight text-[#0B1120]">
                 SecStudy
               </div>
-              <div className="text-[11px] font-medium text-indigo-600">
-                Free Security Hub
-              </div>
+              <div className="text-xs text-[#64748B]">Free Security Hub</div>
             </div>
           </div>
           <button

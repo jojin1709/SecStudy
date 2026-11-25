@@ -1,0 +1,13 @@
+<svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#0B1120"/>
+  <!-- Top-right triangle -->
+  <polygon points="34,14 51,14 34,25" fill="#FFFFFF"/>
+  <!-- Upper-left slanted block -->
+  <polygon points="17,24 30,16 30,27 17,35" fill="#FFFFFF"/>
+  <!-- Center isometric bridge -->
+  <polygon points="18,37.5 31,29.5 46,32.5 33,40.5" fill="#FFFFFF"/>
+  <!-- Lower-right slanted block -->
+  <polygon points="34,42.5 47,34.5 47,45.5 34,53.5" fill="#FFFFFF"/>
+  <!-- Bottom-left triangle -->
+  <polygon points="30,42.5 30,53.5 13,53.5" fill="#FFFFFF"/>
+</svg>
