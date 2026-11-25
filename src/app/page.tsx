@@ -5,21 +5,17 @@ import {
   Bookmark,
   BookOpen,
   Compass,
-  Database,
   Flag,
   LayoutGrid,
   List,
   Menu,
   PlayCircle,
-  Plus,
   Search,
   ShieldCheck,
   Sparkles,
   Wrench,
   X,
 } from "lucide-react";
-import { AddResourceModal } from "@/components/AddResourceModal";
-import { BackupModal } from "@/components/BackupModal";
 import { ResourceCard } from "@/components/ResourceCard";
 import { ResourceDetailModal } from "@/components/ResourceDetailModal";
 import { ResourceTable } from "@/components/ResourceTable";
@@ -157,11 +153,7 @@ export default function HomePage() {
     cycleStatus,
     toggleBookmark,
     saveNotes,
-    addCustomResource,
     deleteCustomResource,
-    exportBackup,
-    importBackup,
-    resetAllData,
   } = useCyberVault();
 
   const [activeNav, setActiveNav] = useState<ActiveNav>("roadmaps");
@@ -176,8 +168,6 @@ export default function HomePage() {
   const [sortBy, setSortBy] = useState<SortOption>("recommended");
 
   const [selectedResource, setSelectedResource] = useState<CyberResource | null>(null);
-  const [addModalOpen, setAddModalOpen] = useState(false);
-  const [backupModalOpen, setBackupModalOpen] = useState(false);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -630,42 +620,13 @@ export default function HomePage() {
                 {stats.bookmarked}
               </span>
             </button>
-
-            <button
-              type="button"
-              onClick={() => selectNav("playbook")}
-              className={navItemClass("playbook")}
-            >
-              <span className="flex items-center gap-2.5">
-                <Flag className="h-4 w-4" />
-                Free Playbook
-              </span>
-            </button>
           </nav>
         </div>
       </div>
 
-      {/* Bottom Actions */}
-      <div className="space-y-2 border-t border-[#EAE6DD] pt-4">
-        <button
-          type="button"
-          onClick={() => setAddModalOpen(true)}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#4F46E5] px-3 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-500"
-        >
-          <Plus className="h-4 w-4" />
-          Add Custom Resource
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setBackupModalOpen(true)}
-          className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] px-3 py-2 text-xs font-medium text-stone-700 transition hover:bg-[#EAE6DD]"
-        >
-          <Database className="h-3.5 w-3.5 text-stone-500" />
-          Backup / Import
-        </button>
-
-        <div className="pt-1 text-center text-[11px] text-stone-500">
+      {/* Sidebar Footer */}
+      <div className="border-t border-[#EAE6DD] pt-4">
+        <div className="text-center text-[11px] text-stone-500">
           Developed by{" "}
           <a
             href="https://www.linkedin.com/in/jojin-john/"
@@ -685,7 +646,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen bg-[#F6F4EE]">
       {/* Pure White Left Sidebar on Desktop */}
-      <aside className="hidden w-64 shrink-0 border-r border-[#EAE6DD] bg-white lg:sticky lg:top-0 lg:block lg:h-screen">
+      <aside className="hidden w-64 shrink-0 border-r border-[#EAE6DD] bg-white lg:sticky lg:top-0 lg:block lg:h-screen lg:overflow-y-auto">
         {sidebarContent}
       </aside>
 
@@ -696,7 +657,7 @@ export default function HomePage() {
           onClick={() => setMobileMenuOpen(false)}
         >
           <aside
-            className="h-full w-72 border-r border-[#EAE6DD] bg-white"
+            className="h-full w-72 overflow-y-auto border-r border-[#EAE6DD] bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             {sidebarContent}
@@ -776,15 +737,6 @@ export default function HomePage() {
                   </button>
                 </div>
               )}
-
-              <button
-                type="button"
-                onClick={() => setAddModalOpen(true)}
-                className="inline-flex items-center gap-1 rounded-xl bg-[#4F46E5] px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 lg:hidden"
-              >
-                <Plus className="h-4 w-4" />
-                Add
-              </button>
             </div>
           </div>
         </header>
@@ -1119,22 +1071,6 @@ export default function HomePage() {
         onSetStatus={setStatus}
         onToggleBookmark={toggleBookmark}
         onSaveNotes={saveNotes}
-      />
-
-      {/* Add Custom Resource Modal */}
-      <AddResourceModal
-        open={addModalOpen}
-        onClose={() => setAddModalOpen(false)}
-        onAdd={addCustomResource}
-      />
-
-      {/* Backup Modal */}
-      <BackupModal
-        open={backupModalOpen}
-        onClose={() => setBackupModalOpen(false)}
-        onExport={exportBackup}
-        onImport={importBackup}
-        onReset={resetAllData}
       />
     </div>
   );
