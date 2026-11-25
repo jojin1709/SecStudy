@@ -31,9 +31,9 @@ export const SECTION_ROUTES: SectionRoute[] = [
   {
     slug: "resources",
     nav: "all",
-    title: "All 140 Free Cybersecurity Resources | SecStudy",
+    title: "All 157 Free Cybersecurity Resources | SecStudy",
     description:
-      "Search and filter 140 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger Academy topics, API/Mobile/AI/Kubernetes labs, CTFs & tools.",
+      "Search and filter 157 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger Academy topics, Android/API/Web3/AI/Kubernetes labs, CTFs & tools.",
     priority: 0.9,
   },
   {
@@ -41,7 +41,7 @@ export const SECTION_ROUTES: SectionRoute[] = [
     nav: "TryHackMe",
     title: "Free TryHackMe Rooms & Career Paths | SecStudy",
     description:
-      "57 curated free TryHackMe rooms, Pre Security & Cyber 101 basics, Linux/Windows PrivEsc, Active Directory, Wreath, and 22+ free CTFs with OpenVPN tips.",
+      "60 curated free TryHackMe rooms, Pre Security & Cyber 101 basics, Linux/Windows PrivEsc, Active Directory, Wreath, and 25+ free CTFs with OpenVPN tips.",
     priority: 0.9,
   },
   {
@@ -57,7 +57,7 @@ export const SECTION_ROUTES: SectionRoute[] = [
     nav: "VulnHub",
     title: "VulnHub Free Offline Boot2Root VMs | SecStudy",
     description:
-      "15 classic downloadable OSCP-style VulnHub VMs including Kioptrix, Basic Pentesting, DC-1, Stapler, Symfonos, Mr-Robot, CyberSploit 1-2, Sunset 1 & Dawn.",
+      "22 classic downloadable OSCP-style VulnHub VMs including Kioptrix 1-5, Basic Pentesting, DC 1-3, Stapler, Symfonos, Mr-Robot, CyberSploit 1-2, and Sunset series.",
     priority: 0.8,
   },
   {

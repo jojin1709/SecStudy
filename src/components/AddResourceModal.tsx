@@ -42,6 +42,7 @@ const CATEGORIES: Category[] = [
   "Cloud Security",
   "Mobile Security",
   "AI & LLM Security",
+  "Web3 & Smart Contracts",
   "Career & Cert Prep",
   "Tools & Cheat Sheets",
 ];

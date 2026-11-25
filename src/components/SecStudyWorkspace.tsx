@@ -69,6 +69,7 @@ const CATEGORIES: ("All" | Category)[] = [
   "Cloud Security",
   "Mobile Security",
   "AI & LLM Security",
+  "Web3 & Smart Contracts",
   "Career & Cert Prep",
   "Tools & Cheat Sheets",
 ];
@@ -98,12 +99,12 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   all: {
     title: "All Free Resources",
     subtitle:
-      "140 curated TryHackMe rooms, HTB labs, VulnHub VMs, Bug Bounty/API targets, Mobile, AI, Cloud & Career tracks.",
+      "157 curated TryHackMe rooms, HTB labs, VulnHub VMs, Bug Bounty, Android, Web3, AI, Cloud & Career tracks.",
   },
   TryHackMe: {
     title: "TryHackMe Free Rooms & Paths",
     subtitle:
-      "Pre Security & Cyber 101 foundations, Linux/Windows PrivEsc, AD, Wreath & 20+ free CTFs.",
+      "Pre Security & Cyber 101 foundations, Linux/Windows PrivEsc, AD, Wreath & 25+ free CTFs.",
   },
   "Hack The Box": {
     title: "Hack The Box Free Labs",
@@ -113,7 +114,7 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   VulnHub: {
     title: "VulnHub Free Offline VMs",
     subtitle:
-      "Downloadable OSCP-style VirtualBox/VMware Boot2Root labs (Kioptrix, DC-1, Stapler, Symfonos, CyberSploit 1-2, Sunset 1 & Dawn).",
+      "22 downloadable OSCP-style VirtualBox/VMware Boot2Root labs (Kioptrix 1-5, DC 1-3, Stapler, Symfonos, CyberSploit 1-2, Sunset series).",
   },
   "Bug Bounty & Web": {
     title: "Bug Bounty & Web AppSec",

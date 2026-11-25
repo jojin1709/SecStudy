@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://secstudy-free.vercel.app"),
   title: "SecStudy | Free TryHackMe, Hack The Box, CTFs & Learning Hub",
   description:
-    "Organize and track 140 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, all 32 PortSwigger topics, Kubernetes/API/Mobile/AI labs, CTFs, and 7 guided roadmaps.",
+    "Organize and track 157 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger topics, Android/API/Web3/Kubernetes/AI labs, CTFs, and 7 guided roadmaps.",
   keywords: [
     "SecStudy",
     "free cybersecurity resources",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SecStudy — Free Cybersecurity Rooms, HTB Labs, VulnHub & CTFs",
     description:
-      "140 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, all 32 PortSwigger topics, API/Mobile/Kubernetes/AI labs, CTFs, and 7 guided pathways.",
+      "157 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger topics, Android/API/Web3/Kubernetes/AI labs, CTFs, and 7 guided pathways.",
     url: "https://secstudy-free.vercel.app",
     siteName: "SecStudy",
     type: "website",
@@ -63,9 +63,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "SecStudy",
+    alternateName: "SecStudy Free Security Hub",
+    url: "https://secstudy-free.vercel.app",
+    description:
+      "Free cybersecurity study hub organizing 157 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger Academy topics, Android bug bounty labs, Web3 smart contract wargames, and 7 guided roadmaps.",
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Web",
+    isAccessibleForFree: true,
+    author: {
+      "@type": "Person",
+      name: "JOJIN JOHN",
+      url: "https://www.jojinjohn.me",
+      sameAs: [
+        "https://github.com/jojin1709",
+        "https://www.linkedin.com/in/jojin-john/",
+      ],
+    },
+  };
+
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="min-h-screen font-sans text-stone-900 antialiased selection:bg-indigo-500/20 selection:text-indigo-900">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
