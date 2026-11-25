@@ -21,14 +21,16 @@ interface AddResourceModalProps {
 const PLATFORMS: Platform[] = [
   "TryHackMe",
   "Hack The Box",
+  "Bug Bounty & Web",
   "CTFs & Wargames",
-  "Tools & Cheat Sheets",
+  "Blue Team & Cloud",
+  "Tools & Career Prep",
 ];
 
 const CATEGORIES: Category[] = [
   "Fundamentals & OS",
   "Networking",
-  "Web Security",
+  "Web & Bug Bounty",
   "Linux & PrivEsc",
   "Windows & AD",
   "CTF Challenges",
@@ -36,6 +38,8 @@ const CATEGORIES: Category[] = [
   "Binary & Pwn",
   "OSINT & Forensics",
   "Defensive & SOC",
+  "Cloud Security",
+  "Career & Cert Prep",
   "Tools & Cheat Sheets",
 ];
 
@@ -46,6 +50,7 @@ const FREE_STATUSES: FreeTierBadge[] = [
   "Free Account + OpenVPN",
   "Free Tier / 0 Cubes",
   "Free Active Pool",
+  "Pay-What-You-Can ($0+)",
 ];
 
 export function AddResourceModal({
@@ -195,8 +200,12 @@ export function AddResourceModal({
                 <option value="Starting Point">Starting Point</option>
                 <option value="Machine Pool">Machine Pool</option>
                 <option value="Academy Module">Academy Module</option>
+                <option value="Bug Bounty Lab">Bug Bounty Lab</option>
                 <option value="CTF Platform">CTF Platform</option>
                 <option value="Wargame">Wargame</option>
+                <option value="Cloud Lab">Cloud Lab</option>
+                <option value="AD Lab">AD Lab</option>
+                <option value="Career Course">Career Course</option>
                 <option value="Tool / Reference">Tool / Reference</option>
               </select>
             </div>

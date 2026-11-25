@@ -1,13 +1,15 @@
 export type Platform =
   | "TryHackMe"
   | "Hack The Box"
+  | "Bug Bounty & Web"
   | "CTFs & Wargames"
-  | "Tools & Cheat Sheets";
+  | "Blue Team & Cloud"
+  | "Tools & Career Prep";
 
 export type Category =
   | "Fundamentals & OS"
   | "Networking"
-  | "Web Security"
+  | "Web & Bug Bounty"
   | "Linux & PrivEsc"
   | "Windows & AD"
   | "CTF Challenges"
@@ -15,6 +17,8 @@ export type Category =
   | "Binary & Pwn"
   | "OSINT & Forensics"
   | "Defensive & SOC"
+  | "Cloud Security"
+  | "Career & Cert Prep"
   | "Tools & Cheat Sheets";
 
 export type Difficulty = "Beginner" | "Easy" | "Medium" | "Hard";
@@ -23,7 +27,8 @@ export type FreeTierBadge =
   | "100% Free"
   | "Free Account + OpenVPN"
   | "Free Tier / 0 Cubes"
-  | "Free Active Pool";
+  | "Free Active Pool"
+  | "Pay-What-You-Can ($0+)";
 
 export type ProgressStatus = "todo" | "in_progress" | "completed";
 
@@ -37,8 +42,12 @@ export interface CyberResource {
     | "Starting Point"
     | "Machine Pool"
     | "Academy Module"
+    | "Bug Bounty Lab"
     | "CTF Platform"
     | "Wargame"
+    | "Cloud Lab"
+    | "AD Lab"
+    | "Career Course"
     | "Tool / Reference";
   category: Category;
   difficulty: Difficulty;

@@ -93,8 +93,8 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            56 curated free resources across TryHackMe, Hack The Box,
-            OverTheWire, PicoCTF, PortSwigger, and 5 guided study roadmaps.
+            99 curated free resources across TryHackMe, Hack The Box, Bug
+            Bounty, CTFs, Blue Team, Cloud, and 6 career roadmaps.
           </span>
         </div>
 

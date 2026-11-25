@@ -24,6 +24,7 @@ import { ResourceCard } from "@/components/ResourceCard";
 import { ResourceDetailModal } from "@/components/ResourceDetailModal";
 import { ResourceTable } from "@/components/ResourceTable";
 import { RoadmapView } from "@/components/RoadmapView";
+import { STUDY_ROADMAPS } from "@/data/roadmaps";
 import { useCyberVault } from "@/hooks/useCyberVault";
 import {
   Category,
@@ -49,7 +50,7 @@ const CATEGORIES: ("All" | Category)[] = [
   "All",
   "Fundamentals & OS",
   "Networking",
-  "Web Security",
+  "Web & Bug Bounty",
   "Linux & PrivEsc",
   "Windows & AD",
   "CTF Challenges",
@@ -57,6 +58,8 @@ const CATEGORIES: ("All" | Category)[] = [
   "Binary & Pwn",
   "OSINT & Forensics",
   "Defensive & SOC",
+  "Cloud Security",
+  "Career & Cert Prep",
   "Tools & Cheat Sheets",
 ];
 
@@ -84,23 +87,31 @@ const STATUS_RANK: Record<ProgressStatus, number> = {
 const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   all: {
     title: "All Free Resources",
-    subtitle: "Curated TryHackMe rooms, Hack The Box labs, CTFs, and tools in one clean hub.",
+    subtitle: "99+ curated TryHackMe rooms, HTB labs, bug bounty targets, CTFs, cloud & career tracks.",
   },
   TryHackMe: {
     title: "TryHackMe Free Rooms & Paths",
-    subtitle: "Beginner rooms, Pre Security & Cyber 101 foundations, and free CTFs.",
+    subtitle: "Pre Security & Cyber 101 foundations, Linux/Windows PrivEsc, AD, Wreath & 20+ free CTFs.",
   },
   "Hack The Box": {
     title: "Hack The Box Free Labs",
-    subtitle: "Starting Point Tier 0-2, Active Machines Pool, Challenges & Academy Tier 0.",
+    subtitle: "Starting Point Tier 0-2, Active Machines Pool, Challenges & 58 Tier 0 Academy modules.",
+  },
+  "Bug Bounty & Web": {
+    title: "Bug Bounty & Web AppSec",
+    subtitle: "PortSwigger Academy tracks, Hacker101 private invites, Juice Shop, PentesterLab & Hacktivity.",
   },
   "CTFs & Wargames": {
-    title: "Free CTFs & Wargames",
-    subtitle: "OverTheWire, PicoCTF, PortSwigger, CryptoHack, pwn.college & Blue Team labs.",
+    title: "Free CTFs, Pwn, Crypto & OSINT",
+    subtitle: "OverTheWire, PicoCTF, CryptoHack, pwn.college, Crackmes.one, Microcorruption & Sofia Santos.",
   },
-  "Tools & Cheat Sheets": {
-    title: "Free Tools & Reference Docs",
-    subtitle: "GTFOBins, LOLBAS, HackTricks, PayloadsAllTheThings, CyberChef & more.",
+  "Blue Team & Cloud": {
+    title: "Blue Team, SOC, Cloud & AD Labs",
+    subtitle: "LetsDefend, CyberDefenders, BTLO, KC7 Cyber, SadServers, flaws.cloud, CloudGoat & GOAD.",
+  },
+  "Tools & Career Prep": {
+    title: "Career Certs, Job Prep & Tools",
+    subtitle: "Cisco NetAcad, ISC2 CC, Antisyphon ($0 PWYC), OWASP WSTG, GTFOBins, HackTricks & Burp.",
   },
   bookmarked: {
     title: "Bookmarked Resources",
@@ -111,8 +122,8 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
     subtitle: "Active rooms and labs you are currently working through.",
   },
   roadmaps: {
-    title: "Guided Study Roadmaps",
-    subtitle: "Structured zero-cost tracks from absolute beginner to specialist.",
+    title: "Guided Career & Skill Roadmaps",
+    subtitle: "6 structured zero-cost tracks for Job Readiness, Bug Bounty, Pentesting, SOC, Cloud & Pwn.",
   },
   playbook: {
     title: "Free Access Playbook",
@@ -179,8 +190,10 @@ export default function HomePage() {
     const counts: Record<Platform, number> = {
       TryHackMe: 0,
       "Hack The Box": 0,
+      "Bug Bounty & Web": 0,
       "CTFs & Wargames": 0,
-      "Tools & Cheat Sheets": 0,
+      "Blue Team & Cloud": 0,
+      "Tools & Career Prep": 0,
     };
     for (const r of allResources) {
       counts[r.platform] += 1;
@@ -197,8 +210,10 @@ export default function HomePage() {
       if (
         activeNav === "TryHackMe" ||
         activeNav === "Hack The Box" ||
+        activeNav === "Bug Bounty & Web" ||
         activeNav === "CTFs & Wargames" ||
-        activeNav === "Tools & Cheat Sheets"
+        activeNav === "Blue Team & Cloud" ||
+        activeNav === "Tools & Career Prep"
       ) {
         if (item.platform !== activeNav) return false;
       }
@@ -404,12 +419,32 @@ export default function HomePage() {
 
             <button
               type="button"
+              onClick={() => selectNav("Bug Bounty & Web")}
+              className={navItemClass("Bug Bounty & Web")}
+            >
+              <span className="flex items-center gap-2.5">
+                <span className="h-2 w-2 rounded-full bg-violet-500" />
+                Bug Bounty &amp; Web
+              </span>
+              <span
+                className={`font-mono text-[11px] ${
+                  activeNav === "Bug Bounty & Web"
+                    ? "text-indigo-100"
+                    : "text-slate-400"
+                }`}
+              >
+                {platformCounts["Bug Bounty & Web"]}
+              </span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => selectNav("CTFs & Wargames")}
               className={navItemClass("CTFs & Wargames")}
             >
               <span className="flex items-center gap-2.5">
                 <span className="h-2 w-2 rounded-full bg-sky-500" />
-                CTFs & Wargames
+                CTFs &amp; Wargames
               </span>
               <span
                 className={`font-mono text-[11px] ${
@@ -424,21 +459,41 @@ export default function HomePage() {
 
             <button
               type="button"
-              onClick={() => selectNav("Tools & Cheat Sheets")}
-              className={navItemClass("Tools & Cheat Sheets")}
+              onClick={() => selectNav("Blue Team & Cloud")}
+              className={navItemClass("Blue Team & Cloud")}
             >
               <span className="flex items-center gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
-                Tools & Docs
+                <span className="h-2 w-2 rounded-full bg-teal-500" />
+                Blue Team &amp; Cloud
               </span>
               <span
                 className={`font-mono text-[11px] ${
-                  activeNav === "Tools & Cheat Sheets"
+                  activeNav === "Blue Team & Cloud"
                     ? "text-indigo-100"
                     : "text-slate-400"
                 }`}
               >
-                {platformCounts["Tools & Cheat Sheets"]}
+                {platformCounts["Blue Team & Cloud"]}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => selectNav("Tools & Career Prep")}
+              className={navItemClass("Tools & Career Prep")}
+            >
+              <span className="flex items-center gap-2.5">
+                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                Career &amp; Tools
+              </span>
+              <span
+                className={`font-mono text-[11px] ${
+                  activeNav === "Tools & Career Prep"
+                    ? "text-indigo-100"
+                    : "text-slate-400"
+                }`}
+              >
+                {platformCounts["Tools & Career Prep"]}
               </span>
             </button>
           </nav>
@@ -466,7 +521,7 @@ export default function HomePage() {
                     : "text-slate-400"
                 }`}
               >
-                5
+                {STUDY_ROADMAPS.length}
               </span>
             </button>
 

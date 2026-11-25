@@ -30,8 +30,10 @@ interface ResourceCardProps {
 const PLATFORM_DOT: Record<Platform, string> = {
   TryHackMe: "bg-rose-500",
   "Hack The Box": "bg-emerald-500",
+  "Bug Bounty & Web": "bg-violet-500",
   "CTFs & Wargames": "bg-sky-500",
-  "Tools & Cheat Sheets": "bg-amber-500",
+  "Blue Team & Cloud": "bg-teal-500",
+  "Tools & Career Prep": "bg-amber-500",
 };
 
 const DIFFICULTY_BADGE: Record<Difficulty, string> = {

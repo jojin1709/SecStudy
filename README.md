@@ -1,5 +1,5 @@
 > [!NOTE]
-> **56 verified free cybersecurity resources in one place:** organize free [TryHackMe](https://tryhackme.com/) rooms, [Hack The Box](https://www.hackthebox.com/) Starting Point &amp; Active Pool labs, top free CTFs, and essential security tools—without hitting paywalls.
+> **99 verified free cybersecurity resources in one place:** organize free [TryHackMe](https://tryhackme.com/) rooms, [Hack The Box](https://www.hackthebox.com/) labs &amp; Academy Tier 0 modules, Bug Bounty targets, CTFs, Blue Team/Cloud labs, and job-ready career tracks—without hitting paywalls.
 
 <div align="center">
 
@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 15" />
   <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Resources-56_Free-4F46E5?style=for-the-badge" alt="56 Free Resources" />
+  <img src="https://img.shields.io/badge/Resources-99_Free-4F46E5?style=for-the-badge" alt="99 Free Resources" />
 </p>
 
 ### A clean workspace to manage free TryHackMe rooms, Hack The Box labs, CTFs, and cybersecurity study roadmaps.
@@ -89,14 +89,16 @@ Many cybersecurity tools default to dark matrix/cyberpunk themes that feel visua
 
 ## Curated Free Catalog
 
-SecStudy ships with **56 verified free resources** out of the box:
+SecStudy ships with **99 verified free resources** across 6 structured platforms:
 
 | Platform / Group | Count | Highlights Included | Free Access Model |
 | --- | :---: | --- | --- |
-| **TryHackMe** | 31 | OpenVPN, Linux 1–3, Windows 1–3, Networking, DNS, CyberChef, Burp Repeater, Pre Security &amp; Cyber 101 overviews, OhSINT, Pickle Rick, RootMe, Simple CTF, Bounty Hacker, Vulnversity, LazyAdmin, Kenobi, Blue, Ice, Mr. Robot CTF | Free rooms &amp; unlimited lab time via OpenVPN |
-| **Hack The Box** | 8 | Starting Point Tier 0 (`Meow`, `Fawn`, `Dancing`, `Redeemer`, `Explosion`, `Preignition`), Tier 1–2 overview, Active Machines Pool, Active Challenges, HTB Academy Tier 0 (0-Cube) modules | Free account + OpenVPN / 0-Cube modules |
-| **CTFs &amp; Wargames** | 9 | OverTheWire (`Bandit`, `Natas`), PicoCTF, PortSwigger Web Security Academy, CryptoHack, pwn.college, CTFtime, LetsDefend Free Tier, CyberDefenders | 100% free forever / Free tier |
-| **Tools &amp; Cheat Sheets** | 8 | GTFOBins, LOLBAS, HackTricks, PayloadsAllTheThings, CyberChef, Online RevShell Generator, Burp Suite Community, Exploit-DB | 100% free open tools &amp; wikis |
+| **TryHackMe** | 47 | OpenVPN, Pre Security &amp; Cyber 101, Linux 1–3, Windows 1–3, Networking, Hydra, Metasploit Intro, Linux PrivEsc, OWASP Juice Shop, Attacktive Directory, Wreath, and 20+ free CTFs | Free rooms &amp; unlimited lab time via OpenVPN |
+| **Hack The Box** | 10 | Starting Point Tier 0–2, Active Machines Pool, Active Challenges, and HTB Academy Tier 0 (0-Cube) modules | Free account + OpenVPN / 0-Cube modules |
+| **Bug Bounty &amp; Web** | 10 | PortSwigger Web Security Academy (SQLi, XSS, CSRF, Access Control/IDOR, SSRF, JWT, API &amp; GraphQL), Hacker101 (private invites), Bugcrowd University, OWASP Juice Shop, PentesterLab, HackerOne Hacktivity | 100% free forever / Free tier |
+| **CTFs &amp; Wargames** | 11 | OverTheWire (`Bandit`, `Natas`, `Leviathan`/`Krypton`), PicoCTF, CryptoHack, pwn.college, Crackmes.one, Microcorruption, CTFtime, Sofia Santos OSINT, OSINT Framework | 100% free forever |
+| **Blue Team &amp; Cloud** | 9 | LetsDefend, CyberDefenders, Blue Team Labs Online, KC7 Cyber (KQL), SadServers, `flaws.cloud` / `flaws2.cloud`, CloudGoat, GOAD (Active Directory), MITRE ATT&amp;CK | 100% free / Free tier |
+| **Career &amp; Tools** | 12 | Cisco NetAcad Junior Analyst &amp; Ethical Hacker, ISC2 CC Prep, Antisyphon ($0 PWYC), OWASP WSTG, GTFOBins, LOLBAS, HackTricks, PayloadsAllTheThings, CyberChef, RevShells, Burp Community, Exploit-DB | 100% free / $0 PWYC |
 
 ## How to Use SecStudy
 
@@ -130,15 +132,16 @@ npm run dev
 
 ## Guided Study Roadmaps
 
-SecStudy includes **5 interactive study tracks** that automatically compute your completion percentage as you check off resources:
+SecStudy includes **6 interactive career &amp; skill roadmaps** that automatically compute your completion percentage as you check off resources:
 
 | Roadmap | Target Role | Focus Areas |
 | --- | --- | --- |
-| **Zero-to-First-CTF Path** | Beginner / Junior Learner | OpenVPN setup, OverTheWire Bandit, Linux 1–3, Networking, HTB Tier 0, PicoCTF, Starter THM CTFs |
-| **Web App Pentesting Track** | Web Pentester / Bug Bounty | Burp Suite Community, ffuf fuzzing, OverTheWire Natas, PortSwigger Academy, PayloadsAllTheThings |
-| **Pentesting &amp; Boot2Root Track** | Penetration Tester | Windows Fundamentals, Nmap, HackTricks, GTFOBins, LOLBAS, THM &amp; HTB Active Boot2Root boxes |
-| **Blue Team / SOC &amp; DFIR Track** | SOC Analyst / Responder | Defensive Security, Windows Event Logs, CyberChef, LetsDefend SIEM triage, CyberDefenders DFIR |
-| **Crypto, Binary &amp; Competitive CTF Track** | CTF Player / Researcher | PicoCTF, CryptoHack (RSA/AES/ECC), pwn.college belts, HTB Challenges, CTFtime live events |
+| **Zero-to-Job Foundations Path** | Beginner -&gt; IT / Junior Security | OpenVPN, Cisco NetAcad, ISC2 CC, OverTheWire Bandit, Linux/Windows, Networking, Nmap, HTB Tier 0, PicoCTF |
+| **Bug Bounty Hunter &amp; Web AppSec Track** | Bug Bounty Hunter / AppSec | Burp Suite Community, ffuf, OWASP Juice Shop, Natas, PortSwigger (SQLi/XSS/IDOR/SSRF/JWT/API), Hacker101, Hacktivity, OWASP WSTG |
+| **Penetration Tester &amp; Red Team Track** | Penetration Tester / Red Teamer | Hydra, Metasploit, Linux PrivEsc, GTFOBins, 15+ Boot2Root CTFs, HTB Tier 1–2 &amp; Active Pool, Attacktive Directory, Wreath, GOAD |
+| **SOC Analyst, Blue Team &amp; DFIR Job Track** | SOC Analyst / DFIR Responder | Defensive Sec, Windows Logs, CyberChef, KC7 Cyber (KQL), LetsDefend, CyberDefenders, BTLO, MITRE ATT&amp;CK, SadServers, OSINT |
+| **Cloud Security Engineer Track** | Cloud Security / Cloud Pentester | `flaws.cloud`, `flaws2.cloud`, SSRF metadata, CloudGoat AWS Pentesting |
+| **Binary Exploitation, Reversing &amp; Crypto CTF Track** | Security Researcher / CTF Player | PicoCTF, OverTheWire Leviathan/Krypton, CryptoHack, Crackmes.one, Microcorruption, pwn.college, HTB Challenges, CTFtime |
 
 ## Architecture
 
@@ -166,8 +169,8 @@ flowchart TD
 | `src/app/layout.tsx` | Root Next.js layout, metadata, OpenGraph config, and Google Fonts (`Inter` &amp; `JetBrains Mono`) |
 | `src/app/opengraph-image.tsx` | Dynamic social preview card for `secstudy-free.vercel.app` |
 | `src/app/globals.css` | Warm cream (`#F6F4EE`) &amp; seamless SVG topographical contour pattern (`.topo-canvas`) |
-| `src/data/resources.ts` | 56 curated free resources across TryHackMe, Hack The Box, CTFs, and tools |
-| `src/data/roadmaps.ts` | 5 structured study roadmaps linked to catalog resource IDs |
+| `src/data/resources.ts` | 99 curated free resources across TryHackMe, Hack The Box, Bug Bounty, CTFs, Blue Team, Cloud &amp; Career |
+| `src/data/roadmaps.ts` | 6 structured career &amp; bug bounty roadmaps linked to catalog resource IDs |
 | `src/hooks/useCyberVault.ts` | Local state management, `localStorage` persistence, custom resources, and JSON backup |
 | `src/components/ResourceCard.tsx` | Pure white resource card component with warm stone tags &amp; quick actions |
 | `src/components/ResourceTable.tsx` | Compact table view for high-density resource scanning |

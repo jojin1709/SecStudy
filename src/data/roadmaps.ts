@@ -2,131 +2,306 @@ import { StudyRoadmap } from "@/types/resource";
 
 export const STUDY_ROADMAPS: StudyRoadmap[] = [
   {
-    id: "roadmap-beginner-ctf",
-    title: "Zero-to-First-CTF Path",
-    subtitle: "Best starting path if you are completely new to Linux, networking, and hacking.",
-    targetRole: "Beginner / Junior Learner",
+    id: "roadmap-beginner-job",
+    title: "Zero-to-Job Foundations Path",
+    subtitle:
+      "Complete beginner path covering Linux, Windows, Networking, core certs, and your first free labs.",
+    targetRole: "Beginner -> IT / Junior Security",
     accent: "emerald",
     steps: [
       {
         id: "step-b1",
-        title: "1. Lab Setup & Orientation",
-        summary: "Set up OpenVPN so you have unlimited free lab time and learn core security ideas.",
-        resourceIds: ["thm-openvpn", "thm-intro-offensive", "thm-principles-security"],
+        title: "1. Lab Setup, Careers & Core Cert Prep",
+        summary:
+          "Set up OpenVPN for unlimited lab time and explore entry-level career tracks & certifications.",
+        resourceIds: [
+          "thm-openvpn",
+          "thm-careers-cyber",
+          "thm-principles-security",
+          "career-cisco-netacad",
+          "career-isc2-cc",
+        ],
       },
       {
         id: "step-b2",
-        title: "2. Linux & Terminal Fluency",
-        summary: "Combine OverTheWire Bandit with TryHackMe Linux Fundamentals to master the shell.",
-        resourceIds: ["ctf-overthewire-bandit", "thm-linux-1", "thm-linux-2", "thm-linux-3"],
+        title: "2. Linux & Windows OS Mastery",
+        summary:
+          "Build rock-solid Linux CLI and Windows administration fluency across OverTheWire, TryHackMe, and HTB Academy.",
+        resourceIds: [
+          "ctf-overthewire-bandit",
+          "thm-linux-1",
+          "thm-linux-2",
+          "thm-linux-3",
+          "thm-windows-1",
+          "thm-windows-2",
+          "thm-windows-3",
+          "htba-linux-windows",
+        ],
       },
       {
         id: "step-b3",
         title: "3. Networking & Recon Basics",
-        summary: "Understand IP/DNS/OSI and start scanning live targets with Nmap.",
-        resourceIds: ["thm-what-is-networking", "thm-intro-networking", "thm-dns-in-detail", "thm-active-recon"],
+        summary:
+          "Understand IP/DNS/OSI and learn how to scan live hosts and services with Nmap.",
+        resourceIds: [
+          "thm-what-is-networking",
+          "thm-intro-networking",
+          "thm-dns-in-detail",
+          "thm-passive-recon",
+          "thm-active-recon",
+          "htba-networking-nmap",
+        ],
       },
       {
         id: "step-b4",
-        title: "4. Your First Guided Boxes & CTFs",
-        summary: "Complete HTB Starting Point Tier 0, PicoCTF starter challenges, and classic easy THM rooms.",
-        resourceIds: ["htb-sp-tier0", "ctf-picoctf", "thm-ohsint", "thm-pickle-rick", "thm-rootme"],
+        title: "4. First Guided Boxes & CTFs",
+        summary:
+          "Put everything together with HTB Starting Point Tier 0, PicoCTF, and beginner TryHackMe CTFs.",
+        resourceIds: [
+          "htb-sp-tier0",
+          "ctf-picoctf",
+          "thm-ohsint",
+          "thm-pickle-rick",
+          "thm-rootme",
+        ],
       },
     ],
   },
   {
-    id: "roadmap-web-pentest",
-    title: "Web App Pentesting Track",
-    subtitle: "Master HTTP, Burp Suite, OWASP Top 10, and real-world web exploitation for free.",
-    targetRole: "Web Pentester / Bug Bounty",
+    id: "roadmap-bug-bounty",
+    title: "Bug Bounty Hunter & Web AppSec Track",
+    subtitle:
+      "From HTTP basics to PortSwigger labs, Hacker101 private invites, real disclosed reports, and live hunting.",
+    targetRole: "Bug Bounty Hunter / AppSec",
     accent: "cyan",
     steps: [
       {
-        id: "step-w1",
-        title: "1. HTTP, Fuzzing & Burp Setup",
-        summary: "Learn how web requests work and set up Burp Suite Community + ffuf.",
-        resourceIds: ["tool-burp-community", "thm-burp-repeater", "htba-web-ffuf-msf"],
+        id: "step-bb1",
+        title: "1. HTTP, Burp Suite & Recon Fuzzing",
+        summary:
+          "Set up Burp Suite Community and master HTTP manipulation, JS reading, and directory/parameter fuzzing.",
+        resourceIds: [
+          "tool-burp-community",
+          "thm-burp-repeater",
+          "htba-web-requests-js",
+          "htba-web-ffuf-msf",
+        ],
       },
       {
-        id: "step-w2",
-        title: "2. Server-Side Web Wargames",
-        summary: "Practice PHP, authentication, and web logic flaws in OverTheWire Natas.",
-        resourceIds: ["ctf-overthewire-natas", "thm-vulnversity", "thm-lazyadmin"],
+        id: "step-bb2",
+        title: "2. Core Web Vulns & Realistic Practice",
+        summary:
+          "Practice IDOR, OWASP Top 10, and server-side flaws on OverTheWire Natas, TryHackMe, and OWASP Juice Shop.",
+        resourceIds: [
+          "thm-neighbour",
+          "thm-owasp-juice-shop",
+          "bb-owasp-juice-shop",
+          "ctf-overthewire-natas",
+          "bb-pentesterlab-free",
+        ],
       },
       {
-        id: "step-w3",
-        title: "3. Industry Gold-Standard Labs",
-        summary: "Work through PortSwigger Web Security Academy labs alongside PayloadsAllTheThings.",
-        resourceIds: ["ctf-portswigger", "tool-payloads"],
+        id: "step-bb3",
+        title: "3. PortSwigger Academy Mastery",
+        summary:
+          "Drill the highest-paying bug classes: SQLi, XSS, CSRF, Access Control/IDOR, SSRF, JWT, OAuth, and APIs.",
+        resourceIds: [
+          "bb-portswigger-hub",
+          "bb-ps-sqli",
+          "bb-ps-xss-csrf",
+          "bb-ps-access-ssrf",
+          "bb-ps-jwt-api",
+        ],
+      },
+      {
+        id: "step-bb4",
+        title: "4. Private Invites, Reports & Methodology",
+        summary:
+          "Earn Hacker101 invites, study real disclosed payouts, and test using the OWASP WSTG checklist.",
+        resourceIds: [
+          "bb-hacker101",
+          "bb-bugcrowd-uni",
+          "bb-hackerone-hacktivity",
+          "tool-owasp-wstg",
+          "tool-payloads",
+        ],
       },
     ],
   },
   {
     id: "roadmap-red-team",
-    title: "Pentesting & Boot2Root Track",
-    subtitle: "Build full enumeration -> foothold -> privilege escalation muscle on THM & HTB.",
-    targetRole: "Penetration Tester",
+    title: "Penetration Tester & Red Team Track",
+    subtitle:
+      "Full boot2root methodology: enumeration, exploitation, Linux/Windows PrivEsc, pivoting, and Active Directory.",
+    targetRole: "Penetration Tester / Red Teamer",
     accent: "amber",
     steps: [
       {
         id: "step-r1",
-        title: "1. OS Internals & Enumeration",
-        summary: "Cover Windows Fundamentals, HTB Academy Nmap, and HackTricks methodology.",
-        resourceIds: ["thm-windows-1", "thm-windows-2", "htba-networking-nmap", "tool-hacktricks"],
+        title: "1. Core Tooling & PrivEsc Foundations",
+        summary:
+          "Master Hydra, Metasploit, Linux PrivEsc, GTFOBins, HackTricks, and Exploit-DB.",
+        resourceIds: [
+          "thm-hydra",
+          "thm-metasploit-intro",
+          "thm-linprivesc",
+          "tool-gtfobins",
+          "tool-revshells",
+          "tool-exploitdb",
+          "tool-hacktricks",
+        ],
       },
       {
         id: "step-r2",
-        title: "2. Guided Boot2Root CTFs",
-        summary: "Root Easy Linux & Windows boxes using Exploit-DB, GTFOBins, and RevShells.",
-        resourceIds: ["thm-simple-ctf", "thm-bounty-hacker", "thm-kenobi", "thm-blue", "thm-ice", "tool-gtfobins", "tool-revshells", "tool-exploitdb"],
+        title: "2. Linux & Windows Boot2Root CTFs",
+        summary:
+          "Root classic Easy TryHackMe boxes and HTB Starting Point Tier 1 to build enumeration speed.",
+        resourceIds: [
+          "thm-simple-ctf",
+          "thm-bounty-hacker",
+          "thm-brooklyn99",
+          "thm-agentsudo",
+          "thm-vulnversity",
+          "thm-lazyadmin",
+          "thm-ignite",
+          "thm-wgelctf",
+          "thm-lianyu",
+          "thm-overpass",
+          "thm-gallery",
+          "thm-kenobi",
+          "thm-blue",
+          "thm-ice",
+          "thm-steelmountain",
+          "htb-sp-tier1",
+        ],
       },
       {
         id: "step-r3",
-        title: "3. Unguided Real Targets",
-        summary: "Step up to Medium rooms, HTB Tier 1-2, and HTB Active Free Machines.",
-        resourceIds: ["thm-mrrobot", "htb-sp-tier1-2", "htb-active-machines", "tool-lolbas"],
+        title: "3. Medium Boxes & Unguided Targets",
+        summary:
+          "Step up to Docker escapes, LFI chaining, HTB Tier 2, and live HTB Active Machines.",
+        resourceIds: [
+          "thm-dogcat",
+          "thm-mrrobot",
+          "htb-sp-tier2",
+          "htb-active-machines",
+          "tool-lolbas",
+        ],
+      },
+      {
+        id: "step-r4",
+        title: "4. Active Directory & Multi-Host Pivoting",
+        summary:
+          "Attack enterprise Windows AD environments and practice multi-machine lateral movement.",
+        resourceIds: ["thm-attacktivedirectory", "thm-wreath", "ad-goad"],
       },
     ],
   },
   {
     id: "roadmap-blue-team",
-    title: "Blue Team / SOC & DFIR Track",
-    subtitle: "Learn alert triage, packet analysis, forensics, and incident response for free.",
-    targetRole: "SOC Analyst / Incident Responder",
+    title: "SOC Analyst, Blue Team & DFIR Job Track",
+    subtitle:
+      "Prepare for Tier 1/2 SOC and Incident Response interviews with live SIEM triage, KQL, DFIR, and MITRE ATT&CK.",
+    targetRole: "SOC Analyst / DFIR Responder",
     accent: "violet",
     steps: [
       {
         id: "step-d1",
-        title: "1. Defensive Foundations",
-        summary: "Learn defensive workflows, Windows Event Logs, Defender, and CyberChef.",
-        resourceIds: ["thm-intro-defensive", "thm-windows-2", "thm-windows-3", "thm-cyberchef", "tool-cyberchef"],
+        title: "1. Defensive Foundations & Decoding",
+        summary:
+          "Learn defensive operations, Windows logging/Defender, CyberChef, and Cisco's Junior Analyst path.",
+        resourceIds: [
+          "thm-intro-defensive",
+          "thm-windows-2",
+          "thm-windows-3",
+          "thm-cyberchef",
+          "tool-cyberchef",
+          "career-cisco-netacad",
+        ],
       },
       {
         id: "step-d2",
-        title: "2. Alert Triage & Forensics CTFs",
-        summary: "Investigate real SIEM alerts on LetsDefend and DFIR artifacts on CyberDefenders.",
-        resourceIds: ["ctf-letsdefend", "ctf-cyberdefenders", "thm-passive-recon"],
+        title: "2. Live SOC Alert Triage & KQL Hunting",
+        summary:
+          "Practice investigating phishing, malware, and ransomware logs on LetsDefend, KC7 Cyber, and Antisyphon.",
+        resourceIds: [
+          "bt-kc7cyber",
+          "bt-letsdefend",
+          "career-antisyphon",
+          "bt-mitre-attack",
+        ],
+      },
+      {
+        id: "step-d3",
+        title: "3. DFIR, OSINT & Linux Incident Response",
+        summary:
+          "Analyze PCAPs, memory dumps, OSINT trails, and troubleshoot broken Linux servers under pressure.",
+        resourceIds: [
+          "bt-cyberdefenders",
+          "bt-btlo",
+          "bt-sadservers",
+          "osint-sofia-santos",
+          "osint-framework",
+        ],
+      },
+    ],
+  },
+  {
+    id: "roadmap-cloud-sec",
+    title: "Cloud Security Engineer Track",
+    subtitle:
+      "Learn AWS misconfigurations, IAM privilege escalation, S3 leaks, and cloud pentesting for free.",
+    targetRole: "Cloud Security / Cloud Pentester",
+    accent: "emerald",
+    steps: [
+      {
+        id: "step-c1",
+        title: "1. Cloud CTF Fundamentals (No AWS Bill)",
+        summary:
+          "Exploit S3 buckets, snapshots, IAM roles, and EC2 metadata directly against hosted cloud challenges.",
+        resourceIds: ["cloud-flaws", "bb-ps-access-ssrf"],
+      },
+      {
+        id: "step-c2",
+        title: "2. Self-Hosted AWS Pentesting Labs",
+        summary:
+          "Deploy intentionally vulnerable AWS architectures with Terraform and audit them with CloudGoat & HackTricks.",
+        resourceIds: ["cloud-cloudgoat", "tool-hacktricks"],
       },
     ],
   },
   {
     id: "roadmap-pwn-crypto",
-    title: "Crypto, Binary & Competitive CTF Track",
-    subtitle: "Deep technical track for Cryptography, Reverse Engineering, Pwn, and weekend CTFs.",
-    targetRole: "CTF Player / Security Researcher",
+    title: "Binary Exploitation, Reversing & Crypto CTF Track",
+    subtitle:
+      "Deep technical path for reverse engineering, memory corruption, modern cryptography, and live CTFs.",
+    targetRole: "Security Researcher / CTF Player",
     accent: "rose",
     steps: [
       {
         id: "step-p1",
-        title: "1. Jeopardy & Crypto Foundations",
-        summary: "Build broad problem-solving on PicoCTF and modern crypto attacks on CryptoHack.",
-        resourceIds: ["ctf-picoctf", "ctf-cryptohack", "tool-cyberchef"],
+        title: "1. Jeopardy & Modern Cryptography",
+        summary:
+          "Build broad CTF problem-solving on PicoCTF, classical crypto on OverTheWire, and RSA/AES/ECC on CryptoHack.",
+        resourceIds: [
+          "ctf-picoctf",
+          "ctf-overthewire-leviathan",
+          "ctf-cryptohack",
+          "tool-cyberchef",
+        ],
       },
       {
         id: "step-p2",
-        title: "2. Low-Level Systems & Weekend CTFs",
-        summary: "Earn belts on pwn.college, solve HTB Challenges, and compete via CTFtime.",
-        resourceIds: ["ctf-pwn-college", "htb-free-challenges", "ctf-ctftime"],
+        title: "2. Reverse Engineering & Low-Level Pwn",
+        summary:
+          "Debug crackmes, solve embedded MSP430 firmware challenges, earn pwn.college belts, and compete on CTFtime.",
+        resourceIds: [
+          "ctf-crackmes-one",
+          "ctf-microcorruption",
+          "ctf-pwn-college",
+          "htb-free-challenges",
+          "ctf-ctftime",
+        ],
       },
     ],
   },

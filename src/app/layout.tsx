@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SecStudy — Free Cybersecurity Rooms, HTB Labs & CTFs",
     description:
-      "56 verified free TryHackMe rooms, Hack The Box labs, CTFs, tools, and 5 guided study roadmaps.",
+      "99 verified free TryHackMe rooms, Hack The Box labs, Bug Bounty targets, CTFs, Blue Team/Cloud labs, and 6 career roadmaps.",
     url: "https://secstudy-free.vercel.app",
     siteName: "SecStudy",
     type: "website",
