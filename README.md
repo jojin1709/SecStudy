@@ -3,6 +3,10 @@
 
 <div align="center">
 
+<p>
+  <img src="./src/app/icon.svg" alt="SecStudy Logo" width="72" height="72" />
+</p>
+
 <h1>SecStudy</h1>
 
 <p>
