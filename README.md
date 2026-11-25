@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/Resources-56_Free-4F46E5?style=for-the-badge" alt="56 Free Resources" />
 </p>
 
-### A clean Glassmorphism workspace to manage free TryHackMe rooms, Hack The Box labs, CTFs, and cybersecurity study roadmaps.
+### A clean workspace to manage free TryHackMe rooms, Hack The Box labs, CTFs, and cybersecurity study roadmaps.
 
 Track your progress, filter by platform or difficulty, save personal commands &amp; study notes, and follow guided zero-cost tracks from beginner to specialist. **100% free resources, 100% local privacy.**
 
@@ -22,11 +22,11 @@ Track your progress, filter by platform or difficulty, save personal commands &a
 git clone https://github.com/jojin1709/SecStudy.git && cd SecStudy && npm install && npm run dev
 ```
 
-<sub>Open <code>http://localhost:3000</code> in your browser to launch your workspace.</sub>
+<sub>Open <code>http://localhost:3000</code> in your browser to launch your workspace, or try the <a href="https://secstudy-free.vercel.app"><strong>Live App</strong></a>.</sub>
 
 ---
 
-[![Developer](https://img.shields.io/badge/Developed_by-JOJIN_JOHN-4F46E5?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jojin1709)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-secstudy--free.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://secstudy-free.vercel.app)&nbsp;&nbsp;[![Developer](https://img.shields.io/badge/Developed_by-JOJIN_JOHN-4F46E5?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jojin1709)
 
 ---
 

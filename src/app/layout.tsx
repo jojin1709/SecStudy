@@ -13,10 +13,25 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://secstudy-free.vercel.app"),
   title: "SecStudy | Free TryHackMe, Hack The Box, CTFs & Learning Hub",
   description:
-    "Clean glassmorphism learning hub to organize and track 100% free TryHackMe rooms, Hack The Box labs, CTFs, wargames, tools, and study roadmaps.",
-  authors: [{ name: "Jojin John" }],
+    "Organize and track 100% free TryHackMe rooms, Hack The Box labs, CTFs, wargames, tools, and study roadmaps.",
+  authors: [{ name: "JOJIN JOHN" }],
+  openGraph: {
+    title: "SecStudy — Free Cybersecurity Rooms, HTB Labs & CTFs",
+    description:
+      "56 verified free TryHackMe rooms, Hack The Box labs, CTFs, tools, and 5 guided study roadmaps.",
+    url: "https://secstudy-free.vercel.app",
+    siteName: "SecStudy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SecStudy — Free Cybersecurity Learning Hub",
+    description:
+      "Track free TryHackMe rooms, Hack The Box labs, CTFs, tools, and guided roadmaps.",
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen font-sans text-slate-900 antialiased selection:bg-indigo-500/20 selection:text-indigo-900">
+      <body className="min-h-screen font-sans text-stone-900 antialiased selection:bg-indigo-500/20 selection:text-indigo-900">
         {children}
       </body>
     </html>
