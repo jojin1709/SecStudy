@@ -13,9 +13,11 @@ import {
   Search,
   ShieldCheck,
   Sparkles,
+  User,
   Wrench,
   X,
 } from "lucide-react";
+import { AboutView } from "@/components/AboutView";
 import { ResourceCard } from "@/components/ResourceCard";
 import { ResourceDetailModal } from "@/components/ResourceDetailModal";
 import { ResourceTable } from "@/components/ResourceTable";
@@ -37,7 +39,8 @@ type ActiveNav =
   | "bookmarked"
   | "in_progress"
   | "roadmaps"
-  | "playbook";
+  | "playbook"
+  | "about";
 
 type ViewMode = "grid" | "list";
 type StatusFilter = "all" | ProgressStatus;
@@ -142,6 +145,10 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
     title: "Free Access Playbook",
     subtitle: "Practical guide to accessing TryHackMe & Hack The Box labs for free.",
   },
+  about: {
+    title: "About & Creator Story",
+    subtitle: "Meet JOJIN JOHN — why SecStudy was built and how to connect.",
+  },
 };
 
 export default function HomePage() {
@@ -210,7 +217,10 @@ export default function HomePage() {
     return counts;
   }, [allResources]);
 
-  const isCatalogView = activeNav !== "roadmaps" && activeNav !== "playbook";
+  const isCatalogView =
+    activeNav !== "roadmaps" &&
+    activeNav !== "playbook" &&
+    activeNav !== "about";
 
   const filteredResources = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -403,6 +413,17 @@ export default function HomePage() {
               <span className="flex items-center gap-2.5">
                 <Flag className="h-4 w-4" />
                 Free Access Guide
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => selectNav("about")}
+              className={navItemClass("about")}
+            >
+              <span className="flex items-center gap-2.5">
+                <User className="h-4 w-4" />
+                About &amp; My Story
               </span>
             </button>
           </nav>
@@ -922,6 +943,15 @@ export default function HomePage() {
               onCycleStatus={cycleStatus}
               onOpenDetails={setSelectedResource}
               onBrowseAll={() => setActiveNav("all")}
+            />
+          )}
+
+          {/* About & Story */}
+          {activeNav === "about" && (
+            <AboutView
+              totalResources={allResources.length}
+              totalRoadmaps={STUDY_ROADMAPS.length}
+              onStartPathways={() => setActiveNav("roadmaps")}
             />
           )}
 
