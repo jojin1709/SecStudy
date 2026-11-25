@@ -16,8 +16,32 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://secstudy-free.vercel.app"),
   title: "SecStudy | Free TryHackMe, Hack The Box, CTFs & Learning Hub",
   description:
-    "Organize and track 100% free TryHackMe rooms, Hack The Box labs, CTFs, wargames, tools, and study roadmaps.",
-  authors: [{ name: "JOJIN JOHN" }],
+    "Organize and track 126 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, all 32 PortSwigger topics, CTFs, wargames, tools, and 7 guided study roadmaps.",
+  keywords: [
+    "SecStudy",
+    "free cybersecurity resources",
+    "free TryHackMe rooms",
+    "Hack The Box free labs",
+    "PortSwigger Web Security Academy",
+    "VulnHub VMs",
+    "CTF practice",
+    "cybersecurity roadmap",
+    "bug bounty learning",
+  ],
+  authors: [{ name: "JOJIN JOHN", url: "https://www.jojinjohn.me" }],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "SecStudy — Free Cybersecurity Rooms, HTB Labs, VulnHub & CTFs",
     description:
