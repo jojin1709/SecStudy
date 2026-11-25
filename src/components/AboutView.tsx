@@ -80,10 +80,6 @@ export function AboutView({
                   <MapPin className="h-3.5 w-3.5" />
                   Thrissur, Kerala, India
                 </span>
-                <span>·</span>
-                <span>BCA Student · ELIMS College of Arts and Science</span>
-                <span>·</span>
-                <span>Tinos Software and Security Solutions LLP</span>
               </div>
             </div>
           </div>
@@ -131,11 +127,11 @@ export function AboutView({
           Why I Built SecStudy — My Story
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-stone-600">
-          I&apos;m a BCA student, full-stack software engineer, and bug bounty
-          researcher working at the intersection of AI-native development and
-          application security. Everything I know in cybersecurity started with
-          free community labs—but finding which rooms were actually free and
-          what order to take them was frustrating.
+          I&apos;m a full-stack software engineer and cybersecurity researcher
+          working at the intersection of AI-native development and application
+          security. Everything I know in cybersecurity started with free
+          community labs—but finding which rooms were actually free and what
+          order to take them was frustrating.
         </p>
 
         <div className="mt-5 grid gap-4 md:grid-cols-3">
