@@ -17,18 +17,18 @@ interface RoadmapViewProps {
 }
 
 const ACCENT_MAP = {
-  emerald: "text-emerald-700 bg-emerald-500/12 border-emerald-500/20",
-  cyan: "text-sky-700 bg-sky-500/12 border-sky-500/20",
-  amber: "text-amber-700 bg-amber-500/12 border-amber-500/20",
-  violet: "text-violet-700 bg-violet-500/12 border-violet-500/20",
-  rose: "text-rose-700 bg-rose-500/12 border-rose-500/20",
+  emerald: "text-emerald-700 bg-emerald-50 border-emerald-200/80",
+  cyan: "text-sky-700 bg-sky-50 border-sky-200/80",
+  amber: "text-amber-700 bg-amber-50 border-amber-200/80",
+  violet: "text-[#4F46E5] bg-[#4F46E5]/10 border-[#4F46E5]/20",
+  rose: "text-rose-700 bg-rose-50 border-rose-200/80",
 };
 
 const BAR_MAP = {
   emerald: "bg-emerald-500",
   cyan: "bg-sky-500",
   amber: "bg-amber-500",
-  violet: "bg-violet-500",
+  violet: "bg-[#4F46E5]",
   rose: "bg-rose-500",
 };
 
@@ -41,10 +41,10 @@ export function RoadmapView({
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="text-xl font-bold text-slate-900">
+        <h2 className="text-xl font-bold text-stone-900">
           Guided Study Roadmaps
         </h2>
-        <p className="mt-1 text-sm text-slate-600">
+        <p className="mt-1 text-sm text-stone-600">
           Step-by-step free tracks combining TryHackMe, Hack The Box, wargames,
           and tools. Click any item to inspect notes or mark progress.
         </p>
@@ -65,31 +65,31 @@ export function RoadmapView({
           return (
             <section
               key={roadmap.id}
-              className="glass-panel rounded-2xl p-6"
+              className="rounded-2xl border border-[#EAE6DD] bg-white p-6 shadow-[0_2px_6px_rgba(28,25,23,0.03)]"
             >
-              <div className="flex flex-col justify-between gap-4 border-b border-slate-900/5 pb-4 md:flex-row md:items-center">
+              <div className="flex flex-col justify-between gap-4 border-b border-[#EAE6DD] pb-4 md:flex-row md:items-center">
                 <div>
                   <span
                     className={`inline-block rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${ACCENT_MAP[roadmap.accent]}`}
                   >
                     {roadmap.targetRole}
                   </span>
-                  <h3 className="mt-2 text-lg font-bold text-slate-900">
+                  <h3 className="mt-2 text-lg font-bold text-stone-900">
                     {roadmap.title}
                   </h3>
-                  <p className="mt-1 text-xs text-slate-600">
+                  <p className="mt-1 text-xs text-stone-600">
                     {roadmap.subtitle}
                   </p>
                 </div>
 
                 <div className="min-w-[190px]">
-                  <div className="flex items-center justify-between text-xs text-slate-600">
+                  <div className="flex items-center justify-between text-xs text-stone-600">
                     <span>Completed</span>
-                    <span className="font-mono font-semibold text-slate-900">
+                    <span className="font-mono font-semibold text-stone-900">
                       {completedCount}/{uniqueIds.length} ({pct}%)
                     </span>
                   </div>
-                  <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-900/10">
+                  <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#F4F2EC]">
                     <div
                       className={`h-full rounded-full transition-all duration-300 ${BAR_MAP[roadmap.accent]}`}
                       style={{ width: `${pct}%` }}
@@ -102,12 +102,12 @@ export function RoadmapView({
                 {roadmap.steps.map((step) => (
                   <div
                     key={step.id}
-                    className="rounded-xl border border-white/80 bg-white/50 p-4 shadow-2xs"
+                    className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-4"
                   >
-                    <h4 className="text-sm font-semibold text-slate-900">
+                    <h4 className="text-sm font-semibold text-stone-900">
                       {step.title}
                     </h4>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-600">
+                    <p className="mt-1 text-xs leading-relaxed text-stone-600">
                       {step.summary}
                     </p>
 
@@ -126,7 +126,7 @@ export function RoadmapView({
                         return (
                           <div
                             key={res.id}
-                            className="flex items-center justify-between gap-2 rounded-xl px-2.5 py-1.5 text-xs transition hover:bg-white/80"
+                            className="flex items-center justify-between gap-2 rounded-xl bg-white px-2.5 py-1.5 text-xs transition hover:bg-[#FAF9F5]"
                           >
                             <div className="flex min-w-0 items-center gap-2">
                               <button
@@ -137,8 +137,8 @@ export function RoadmapView({
                                   p.status === "completed"
                                     ? "text-emerald-600"
                                     : p.status === "in_progress"
-                                      ? "text-indigo-600"
-                                      : "text-slate-400 hover:text-slate-700"
+                                      ? "text-[#4F46E5]"
+                                      : "text-stone-400 hover:text-stone-700"
                                 }`}
                               >
                                 <StatusIcon className="h-4 w-4" />
@@ -147,21 +147,21 @@ export function RoadmapView({
                               <button
                                 type="button"
                                 onClick={() => onOpenDetails(res)}
-                                className="truncate text-left font-medium text-slate-800 hover:text-indigo-600"
+                                className="truncate text-left font-medium text-stone-800 hover:text-[#4F46E5]"
                               >
                                 {res.title}
                               </button>
                             </div>
 
                             <div className="flex shrink-0 items-center gap-2">
-                              <span className="hidden text-[11px] text-slate-500 sm:inline">
+                              <span className="hidden text-[11px] text-stone-500 sm:inline">
                                 {res.platform}
                               </span>
                               <a
                                 href={res.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-slate-400 hover:text-indigo-600"
+                                className="text-stone-400 hover:text-[#4F46E5]"
                                 title="Open official resource"
                               >
                                 <ArrowUpRight className="h-3.5 w-3.5" />

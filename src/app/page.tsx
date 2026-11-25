@@ -287,8 +287,8 @@ export default function HomePage() {
   const navItemClass = (nav: ActiveNav) =>
     `flex w-full items-center justify-between rounded-xl px-3 py-2 text-[13px] font-medium transition ${
       activeNav === nav
-        ? "bg-indigo-600 text-white shadow-sm"
-        : "text-slate-600 hover:bg-white/70 hover:text-slate-900"
+        ? "bg-[#4F46E5] text-white shadow-sm"
+        : "text-stone-600 hover:bg-[#F4F2EC] hover:text-stone-900"
     }`;
 
   const sidebarContent = (
@@ -318,21 +318,21 @@ export default function HomePage() {
           </button>
         </div>
 
-        {/* Frosted Progress Widget */}
-        <div className="rounded-2xl border border-white/80 bg-white/60 p-3.5 shadow-2xs">
+        {/* Progress Widget */}
+        <div className="rounded-2xl border border-[#EAE6DD] bg-[#F4F2EC] p-3.5">
           <div className="flex items-center justify-between text-xs">
-            <span className="font-medium text-slate-600">Your Progress</span>
-            <span className="font-mono font-semibold text-indigo-600">
+            <span className="font-medium text-stone-600">Your Progress</span>
+            <span className="font-mono font-semibold text-[#4F46E5]">
               {stats.completed}/{stats.total}
             </span>
           </div>
-          <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-900/10">
+          <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#EAE6DD]">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-indigo-600 to-sky-500 transition-all duration-300"
+              className="h-full rounded-full bg-[#4F46E5] transition-all duration-300"
               style={{ width: `${stats.percent}%` }}
             />
           </div>
-          <div className="mt-2 flex items-center justify-between text-[11px] text-slate-500">
+          <div className="mt-2 flex items-center justify-between text-[11px] text-stone-500">
             <span>{stats.percent}% completed</span>
             <span>{stats.inProgress} active</span>
           </div>
@@ -525,11 +525,11 @@ export default function HomePage() {
       </div>
 
       {/* Bottom Actions */}
-      <div className="space-y-2 border-t border-slate-900/5 pt-4">
+      <div className="space-y-2 border-t border-[#EAE6DD] pt-4">
         <button
           type="button"
           onClick={() => setAddModalOpen(true)}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-3 py-2.5 text-xs font-semibold text-white shadow-sm shadow-indigo-500/20 transition hover:bg-indigo-500"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#4F46E5] px-3 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-500"
         >
           <Plus className="h-4 w-4" />
           Add Custom Resource
@@ -538,15 +538,15 @@ export default function HomePage() {
         <button
           type="button"
           onClick={() => setBackupModalOpen(true)}
-          className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/80 bg-white/60 px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-white"
+          className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] px-3 py-2 text-xs font-medium text-stone-700 transition hover:bg-[#EAE6DD]"
         >
-          <Database className="h-3.5 w-3.5 text-slate-500" />
+          <Database className="h-3.5 w-3.5 text-stone-500" />
           Backup / Import
         </button>
 
-        <div className="pt-1 text-center text-[11px] text-slate-500">
+        <div className="pt-1 text-center text-[11px] text-stone-500">
           Developed by{" "}
-          <span className="font-semibold text-slate-800">JOJIN JOHN</span>
+          <span className="font-semibold text-stone-800">JOJIN JOHN</span>
         </div>
       </div>
     </div>
@@ -555,20 +555,20 @@ export default function HomePage() {
   const headerMeta = NAV_TITLES[activeNav];
 
   return (
-    <div className="flex min-h-screen gap-4 p-0 lg:p-4">
-      {/* Floating Glass Sidebar on Desktop */}
-      <aside className="glass-panel hidden w-64 shrink-0 rounded-3xl lg:sticky lg:top-4 lg:block lg:h-[calc(100vh-2rem)]">
+    <div className="flex min-h-screen bg-[#F6F4EE]">
+      {/* Pure White Left Sidebar on Desktop */}
+      <aside className="hidden w-64 shrink-0 border-r border-[#EAE6DD] bg-white lg:sticky lg:top-0 lg:block lg:h-screen">
         {sidebarContent}
       </aside>
 
       {/* Mobile Sidebar Drawer */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 flex bg-slate-900/30 backdrop-blur-xs lg:hidden"
+          className="fixed inset-0 z-40 flex bg-stone-900/25 backdrop-blur-xs lg:hidden"
           onClick={() => setMobileMenuOpen(false)}
         >
           <aside
-            className="h-full w-72 border-r border-white/80 bg-white/85 backdrop-blur-2xl"
+            className="h-full w-72 border-r border-[#EAE6DD] bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             {sidebarContent}
@@ -576,16 +576,16 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Main Content Area */}
-      <div className="flex min-w-0 flex-1 flex-col">
-        {/* Floating Frosted Top Search Bar */}
-        <header className="glass-panel sticky top-0 z-20 px-4 py-3 sm:px-6 lg:top-4 lg:rounded-2xl">
-          <div className="flex items-center justify-between gap-3">
+      {/* Main Content Area (Warm Cream + Subtle Topographical Contour Pattern) */}
+      <div className="topo-canvas flex min-w-0 flex-1 flex-col bg-[#F6F4EE]">
+        {/* Pure White Sticky Top Navbar */}
+        <header className="sticky top-0 z-20 border-b border-[#EAE6DD] bg-white px-4 py-3 sm:px-8">
+          <div className="mx-auto flex max-w-6xl items-center justify-between gap-3">
             <div className="flex flex-1 items-center gap-3">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="rounded-xl border border-white/80 bg-white/70 p-2 text-slate-700 hover:bg-white lg:hidden"
+                className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-2 text-stone-700 hover:bg-[#EAE6DD] lg:hidden"
                 aria-label="Open menu"
               >
                 <Menu className="h-4 w-4" />
@@ -593,27 +593,27 @@ export default function HomePage() {
 
               {isCatalogView ? (
                 <div className="relative w-full max-w-md">
-                  <Search className="pointer-events-none absolute left-3.5 top-2.5 h-4 w-4 text-slate-400" />
+                  <Search className="pointer-events-none absolute left-3.5 top-2.5 h-4 w-4 text-stone-400" />
                   <input
                     ref={searchInputRef}
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search rooms, HTB labs, CTFs, tools... (/)"
-                    className="w-full rounded-xl border border-white/80 bg-white/75 py-2 pl-10 pr-8 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:bg-white focus:outline-none"
+                    className="w-full rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] py-2 pl-10 pr-8 text-sm text-stone-900 placeholder:text-stone-400 focus:border-[#4F46E5] focus:bg-white focus:outline-none"
                   />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery("")}
-                      className="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-700"
+                      className="absolute right-2.5 top-2.5 text-stone-400 hover:text-stone-700"
                     >
                       <X className="h-4 w-4" />
                     </button>
                   )}
                 </div>
               ) : (
-                <div className="text-sm font-semibold text-slate-800">
+                <div className="text-sm font-semibold text-stone-800">
                   {headerMeta.title}
                 </div>
               )}
@@ -621,15 +621,15 @@ export default function HomePage() {
 
             <div className="flex items-center gap-2">
               {isCatalogView && (
-                <div className="flex items-center rounded-xl border border-white/80 bg-white/65 p-0.5">
+                <div className="flex items-center rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-0.5">
                   <button
                     type="button"
                     onClick={() => setViewMode("grid")}
                     title="Card Grid View"
                     className={`rounded-lg p-1.5 transition ${
                       viewMode === "grid"
-                        ? "bg-indigo-600 text-white shadow-2xs"
-                        : "text-slate-500 hover:text-slate-800"
+                        ? "bg-[#4F46E5] text-white shadow-2xs"
+                        : "text-stone-500 hover:text-stone-800"
                     }`}
                   >
                     <LayoutGrid className="h-4 w-4" />
@@ -640,8 +640,8 @@ export default function HomePage() {
                     title="Compact Table View"
                     className={`rounded-lg p-1.5 transition ${
                       viewMode === "list"
-                        ? "bg-indigo-600 text-white shadow-2xs"
-                        : "text-slate-500 hover:text-slate-800"
+                        ? "bg-[#4F46E5] text-white shadow-2xs"
+                        : "text-stone-500 hover:text-stone-800"
                     }`}
                   >
                     <List className="h-4 w-4" />
@@ -652,7 +652,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => setAddModalOpen(true)}
-                className="inline-flex items-center gap-1 rounded-xl bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 lg:hidden"
+                className="inline-flex items-center gap-1 rounded-xl bg-[#4F46E5] px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 lg:hidden"
               >
                 <Plus className="h-4 w-4" />
                 Add
@@ -662,26 +662,26 @@ export default function HomePage() {
         </header>
 
         {/* Main Scrollable Workspace */}
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:px-2">
+        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:px-8">
           {isCatalogView && (
             <div className="space-y-5">
               {/* Page Title + Filters */}
               <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                 <div>
                   <div className="flex items-center gap-2.5">
-                    <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+                    <h1 className="text-2xl font-bold tracking-tight text-stone-900">
                       {headerMeta.title}
                     </h1>
-                    <span className="rounded-full border border-white/80 bg-white/70 px-2.5 py-0.5 font-mono text-xs font-semibold text-indigo-700">
+                    <span className="rounded-full border border-[#EAE6DD] bg-[#F4F2EC] px-2.5 py-0.5 font-mono text-xs font-semibold text-[#4F46E5]">
                       {filteredResources.length}
                     </span>
                   </div>
-                  <p className="mt-1 text-xs text-slate-600">
+                  <p className="mt-1 text-xs text-stone-600">
                     {headerMeta.subtitle}
                   </p>
                 </div>
 
-                {/* Frosted Filter Dropdowns */}
+                {/* Warm Stone Filter Dropdowns */}
                 <div className="flex flex-wrap items-center gap-2">
                   <select
                     aria-label="Category filter"
@@ -689,7 +689,7 @@ export default function HomePage() {
                     onChange={(e) =>
                       setSelectedCategory(e.target.value as "All" | Category)
                     }
-                    className="rounded-xl border border-white/80 bg-white/75 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-2xs focus:border-indigo-500 focus:outline-none"
+                    className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] px-3 py-1.5 text-xs font-medium text-stone-700 focus:border-[#4F46E5] focus:bg-white focus:outline-none"
                   >
                     {CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>
@@ -706,7 +706,7 @@ export default function HomePage() {
                         e.target.value as "All" | Difficulty
                       )
                     }
-                    className="rounded-xl border border-white/80 bg-white/75 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-2xs focus:border-indigo-500 focus:outline-none"
+                    className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] px-3 py-1.5 text-xs font-medium text-stone-700 focus:border-[#4F46E5] focus:bg-white focus:outline-none"
                   >
                     {DIFFICULTIES.map((diff) => (
                       <option key={diff} value={diff}>
@@ -719,7 +719,7 @@ export default function HomePage() {
                     aria-label="Sort resources"
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as SortOption)}
-                    className="rounded-xl border border-white/80 bg-white/75 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-2xs focus:border-indigo-500 focus:outline-none"
+                    className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] px-3 py-1.5 text-xs font-medium text-stone-700 focus:border-[#4F46E5] focus:bg-white focus:outline-none"
                   >
                     <option value="recommended">Recommended</option>
                     <option value="difficulty">Difficulty</option>
@@ -731,7 +731,7 @@ export default function HomePage() {
 
               {/* Status Filter Pills */}
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <div className="inline-flex flex-wrap items-center gap-1 rounded-2xl border border-white/80 bg-white/55 p-1 backdrop-blur-md">
+                <div className="inline-flex flex-wrap items-center gap-1 rounded-2xl border border-[#EAE6DD] bg-[#F4F2EC] p-1">
                   {(
                     [
                       { id: "all", label: "All" },
@@ -746,8 +746,8 @@ export default function HomePage() {
                       onClick={() => setStatusFilter(item.id)}
                       className={`rounded-xl px-3 py-1 text-xs font-medium transition ${
                         statusFilter === item.id
-                          ? "bg-white text-indigo-700 shadow-2xs"
-                          : "text-slate-600 hover:text-slate-900"
+                          ? "bg-white text-[#4F46E5] shadow-[0_2px_6px_rgba(28,25,23,0.04)]"
+                          : "text-stone-600 hover:text-stone-900"
                       }`}
                     >
                       {item.label}
@@ -759,7 +759,7 @@ export default function HomePage() {
                   <button
                     type="button"
                     onClick={clearFilters}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:text-indigo-500"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#4F46E5] hover:text-indigo-500"
                   >
                     <X className="h-3.5 w-3.5" />
                     Reset filters
@@ -796,18 +796,18 @@ export default function HomePage() {
                   />
                 )
               ) : (
-                <div className="glass-panel rounded-2xl p-12 text-center">
-                  <p className="text-sm font-semibold text-slate-800">
+                <div className="rounded-2xl border border-[#EAE6DD] bg-white p-12 text-center shadow-[0_2px_6px_rgba(28,25,23,0.03)]">
+                  <p className="text-sm font-semibold text-stone-800">
                     No matching resources found
                   </p>
-                  <p className="mt-1 text-xs text-slate-500">
+                  <p className="mt-1 text-xs text-stone-500">
                     Try clearing your search or switching filters.
                   </p>
                   {hasActiveFilters && (
                     <button
                       type="button"
                       onClick={clearFilters}
-                      className="mt-4 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white hover:bg-indigo-500"
+                      className="mt-4 rounded-xl bg-[#4F46E5] px-4 py-2 text-xs font-semibold text-white hover:bg-indigo-500"
                     >
                       Clear Filters
                     </button>
@@ -831,40 +831,40 @@ export default function HomePage() {
           {activeNav === "playbook" && (
             <div className="space-y-5">
               <div>
-                <h1 className="text-2xl font-bold text-slate-900">
+                <h1 className="text-2xl font-bold text-stone-900">
                   Free Access Playbook
                 </h1>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-stone-600">
                   Practical guide to getting maximum free cybersecurity training
                   without hitting paywalls.
                 </p>
               </div>
 
               <div className="grid gap-5 md:grid-cols-2">
-                <div className="glass-panel rounded-2xl p-6">
+                <div className="rounded-2xl border border-[#EAE6DD] bg-white p-6 shadow-[0_2px_6px_rgba(28,25,23,0.03)]">
                   <div className="flex items-center gap-2 text-rose-600">
                     <Sparkles className="h-4 w-4" />
                     <h2 className="text-base font-bold">
                       TryHackMe: Unlimited Free Strategy
                     </h2>
                   </div>
-                  <ul className="mt-4 space-y-3 text-xs leading-relaxed text-slate-600">
+                  <ul className="mt-4 space-y-3 text-xs leading-relaxed text-stone-600">
                     <li>
-                      <strong className="text-slate-900">
+                      <strong className="text-stone-900">
                         1. Use OpenVPN instead of AttackBox:
                       </strong>{" "}
                       Complete the free <code>OpenVPN</code> room and connect
                       from your own local Linux VM for unlimited lab time.
                     </li>
                     <li>
-                      <strong className="text-slate-900">
+                      <strong className="text-stone-900">
                         2. Do Pre Security & Cyber 101 free rooms individually:
                       </strong>{" "}
                       Core rooms like Linux 1–3, Windows 1–3, Networking, DNS,
                       CyberChef, and Burp Repeater are completely free.
                     </li>
                     <li>
-                      <strong className="text-slate-900">
+                      <strong className="text-stone-900">
                         3. Filter TryHackMe by &ldquo;Free Only&rdquo;:
                       </strong>{" "}
                       Unlock 100+ community CTFs like Pickle Rick, RootMe,
@@ -873,30 +873,30 @@ export default function HomePage() {
                   </ul>
                 </div>
 
-                <div className="glass-panel rounded-2xl p-6">
+                <div className="rounded-2xl border border-[#EAE6DD] bg-white p-6 shadow-[0_2px_6px_rgba(28,25,23,0.03)]">
                   <div className="flex items-center gap-2 text-emerald-600">
                     <ShieldCheck className="h-4 w-4" />
                     <h2 className="text-base font-bold">
                       Hack The Box: Free Tier Playbook
                     </h2>
                   </div>
-                  <ul className="mt-4 space-y-3 text-xs leading-relaxed text-slate-600">
+                  <ul className="mt-4 space-y-3 text-xs leading-relaxed text-stone-600">
                     <li>
-                      <strong className="text-slate-900">
+                      <strong className="text-stone-900">
                         1. Starting Point Tier 0 & Tier 1:
                       </strong>{" "}
                       Start with Tier 0 (Meow, Fawn, Dancing, Redeemer,
                       Explosion, Preignition) with official PDF walkthroughs.
                     </li>
                     <li>
-                      <strong className="text-slate-900">
+                      <strong className="text-stone-900">
                         2. Active Machines & Challenges:
                       </strong>{" "}
                       HTB&apos;s rotating ~20 Active Machines and all Active
                       Challenges are 100% free via OpenVPN.
                     </li>
                     <li>
-                      <strong className="text-slate-900">
+                      <strong className="text-stone-900">
                         3. HTB Academy Tier 0 Modules:
                       </strong>{" "}
                       Filter the Academy catalogue by <code>Tier 0</code>—these
@@ -905,37 +905,37 @@ export default function HomePage() {
                   </ul>
                 </div>
 
-                <div className="glass-panel rounded-2xl p-6 md:col-span-2">
-                  <div className="flex items-center gap-2 text-indigo-600">
+                <div className="rounded-2xl border border-[#EAE6DD] bg-white p-6 shadow-[0_2px_6px_rgba(28,25,23,0.03)] md:col-span-2">
+                  <div className="flex items-center gap-2 text-[#4F46E5]">
                     <Wrench className="h-4 w-4" />
                     <h2 className="text-base font-bold">
                       100% Free Forever Platforms (No Paywalls)
                     </h2>
                   </div>
                   <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-xl border border-white/80 bg-white/55 p-4">
-                      <h3 className="text-sm font-semibold text-slate-900">
+                    <div className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-4">
+                      <h3 className="text-sm font-semibold text-stone-900">
                         PortSwigger Web Academy
                       </h3>
-                      <p className="mt-1 text-xs text-slate-600">
+                      <p className="mt-1 text-xs text-stone-600">
                         Every web security lesson and live lab (SQLi, XSS, SSRF,
                         JWT, OAuth) is completely free forever.
                       </p>
                     </div>
-                    <div className="rounded-xl border border-white/80 bg-white/55 p-4">
-                      <h3 className="text-sm font-semibold text-slate-900">
+                    <div className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-4">
+                      <h3 className="text-sm font-semibold text-stone-900">
                         OverTheWire & PicoCTF
                       </h3>
-                      <p className="mt-1 text-xs text-slate-600">
+                      <p className="mt-1 text-xs text-stone-600">
                         Zero paywalls. Best starting point for Linux SSH
                         (Bandit), Web (Natas), and Jeopardy CTFs.
                       </p>
                     </div>
-                    <div className="rounded-xl border border-white/80 bg-white/55 p-4">
-                      <h3 className="text-sm font-semibold text-slate-900">
+                    <div className="rounded-xl border border-[#EAE6DD] bg-[#F4F2EC] p-4">
+                      <h3 className="text-sm font-semibold text-stone-900">
                         CryptoHack & pwn.college
                       </h3>
-                      <p className="mt-1 text-xs text-slate-600">
+                      <p className="mt-1 text-xs text-stone-600">
                         Interactive Cryptography and university-grade Binary
                         Exploitation dojos at zero cost.
                       </p>
@@ -947,12 +947,12 @@ export default function HomePage() {
           )}
         </main>
 
-        <footer className="mx-auto mt-4 w-full max-w-6xl px-4 pb-6 sm:px-2">
-          <div className="glass-panel flex flex-col items-center justify-between gap-2 rounded-2xl px-5 py-3 text-xs text-slate-600 sm:flex-row">
+        <footer className="mx-auto mt-4 w-full max-w-6xl px-4 pb-6 sm:px-8">
+          <div className="flex flex-col items-center justify-between gap-2 rounded-2xl border border-[#EAE6DD] bg-white px-5 py-3 text-xs text-stone-600 shadow-[0_2px_6px_rgba(28,25,23,0.03)] sm:flex-row">
             <span>SecStudy — Free Cybersecurity Rooms, HTB Labs &amp; CTFs</span>
             <span>
               Developed by{" "}
-              <strong className="font-semibold text-indigo-700">
+              <strong className="font-semibold text-[#4F46E5]">
                 JOJIN JOHN
               </strong>
             </span>

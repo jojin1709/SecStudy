@@ -35,10 +35,10 @@ const PLATFORM_DOT: Record<Platform, string> = {
 };
 
 const DIFFICULTY_BADGE: Record<Difficulty, string> = {
-  Beginner: "text-emerald-700 bg-emerald-500/12 border-emerald-500/20",
-  Easy: "text-sky-700 bg-sky-500/12 border-sky-500/20",
-  Medium: "text-amber-700 bg-amber-500/12 border-amber-500/20",
-  Hard: "text-rose-700 bg-rose-500/12 border-rose-500/20",
+  Beginner: "text-emerald-700 bg-emerald-50 border-emerald-200/80",
+  Easy: "text-sky-700 bg-sky-50 border-sky-200/80",
+  Medium: "text-amber-700 bg-amber-50 border-amber-200/80",
+  Hard: "text-rose-700 bg-rose-50 border-rose-200/80",
 };
 
 const STATUS_CONFIG: Record<
@@ -47,17 +47,18 @@ const STATUS_CONFIG: Record<
 > = {
   todo: {
     label: "Todo",
-    style: "text-slate-600 hover:bg-slate-900/5 hover:text-slate-900",
+    style:
+      "bg-[#F4F2EC] text-stone-600 hover:bg-[#EAE6DD] hover:text-stone-900",
     Icon: Circle,
   },
   in_progress: {
     label: "In Progress",
-    style: "text-indigo-700 bg-indigo-500/12 hover:bg-indigo-500/20",
+    style: "text-[#4F46E5] bg-[#4F46E5]/10 hover:bg-[#4F46E5]/15",
     Icon: PlayCircle,
   },
   completed: {
     label: "Completed",
-    style: "text-emerald-700 bg-emerald-500/12 hover:bg-emerald-500/20",
+    style: "text-emerald-700 bg-emerald-50 hover:bg-emerald-100/80",
     Icon: CheckCircle2,
   },
 };
@@ -77,25 +78,25 @@ export function ResourceCard({
   return (
     <article
       onClick={() => onOpenDetails(resource)}
-      className={`glass-card group flex cursor-pointer flex-col justify-between rounded-2xl p-5 transition-all duration-200 hover:-translate-y-0.5 ${
+      className={`group flex cursor-pointer flex-col justify-between rounded-2xl border bg-white p-5 shadow-[0_2px_6px_rgba(28,25,23,0.03)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(28,25,23,0.06)] ${
         progress.status === "completed"
-          ? "ring-1 ring-emerald-500/35"
+          ? "border-emerald-300/80"
           : progress.status === "in_progress"
-            ? "ring-1 ring-indigo-500/35"
-            : ""
+            ? "border-[#4F46E5]/40"
+            : "border-[#EAE6DD] hover:border-[#D8D2C5]"
       }`}
     >
       <div>
         {/* Top Meta Row */}
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 text-xs">
-            <span className="inline-flex items-center gap-1.5 font-semibold text-slate-700">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-stone-700">
               <span
                 className={`h-2 w-2 rounded-full ${PLATFORM_DOT[resource.platform]}`}
               />
               {resource.platform}
             </span>
-            <span className="text-slate-300">·</span>
+            <span className="text-stone-300">·</span>
             <span
               className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${DIFFICULTY_BADGE[resource.difficulty]}`}
             >
@@ -113,8 +114,8 @@ export function ResourceCard({
               title={progress.bookmarked ? "Remove bookmark" : "Bookmark"}
               className={`rounded-xl p-1.5 transition ${
                 progress.bookmarked
-                  ? "bg-amber-500/15 text-amber-600"
-                  : "text-slate-400 hover:bg-slate-900/5 hover:text-slate-700"
+                  ? "bg-amber-50 text-amber-600"
+                  : "text-stone-400 hover:bg-[#F4F2EC] hover:text-stone-700"
               }`}
             >
               <Bookmark
@@ -127,7 +128,7 @@ export function ResourceCard({
                 type="button"
                 onClick={() => onDeleteCustom(resource.id)}
                 title="Delete custom resource"
-                className="rounded-xl p-1.5 text-slate-400 transition hover:bg-rose-500/15 hover:text-rose-600"
+                className="rounded-xl p-1.5 text-stone-400 transition hover:bg-rose-50 hover:text-rose-600"
               >
                 <Trash2 className="h-4 w-4" />
               </button>
@@ -136,12 +137,12 @@ export function ResourceCard({
         </div>
 
         {/* Title */}
-        <h3 className="mt-3 text-[15px] font-semibold leading-snug text-slate-900 transition group-hover:text-indigo-600">
+        <h3 className="mt-3 text-[15px] font-semibold leading-snug text-stone-900 transition group-hover:text-[#4F46E5]">
           {resource.title}
         </h3>
 
         {/* Sub-metadata */}
-        <div className="mt-1.5 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+        <div className="mt-1.5 flex flex-wrap items-center gap-2 text-xs text-stone-500">
           <span>{resource.category}</span>
           <span>·</span>
           <span className="font-medium text-emerald-700">
@@ -161,16 +162,16 @@ export function ResourceCard({
         </div>
 
         {/* Description */}
-        <p className="mt-3 line-clamp-2 text-[13px] leading-relaxed text-slate-600">
+        <p className="mt-3 line-clamp-2 text-[13px] leading-relaxed text-stone-600">
           {resource.description}
         </p>
 
-        {/* Skill Pills */}
+        {/* Secondary Warm Stone Pill Tags */}
         <div className="mt-3.5 flex flex-wrap gap-1.5">
           {resource.skills.slice(0, 3).map((skill) => (
             <span
               key={skill}
-              className="rounded-lg border border-white/80 bg-white/60 px-2.5 py-0.5 text-[11px] font-medium text-slate-700 shadow-2xs"
+              className="rounded-lg border border-[#EAE6DD] bg-[#F4F2EC] px-2.5 py-0.5 text-[11px] font-medium text-stone-700"
             >
               {skill}
             </span>
@@ -180,7 +181,7 @@ export function ResourceCard({
 
       {/* Footer Actions */}
       <div
-        className="mt-4 flex items-center justify-between border-t border-slate-900/5 pt-3"
+        className="mt-4 flex items-center justify-between border-t border-[#EAE6DD] pt-3"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-1.5">
@@ -199,7 +200,7 @@ export function ResourceCard({
               type="button"
               onClick={() => onOpenDetails(resource)}
               title="View saved notes"
-              className="inline-flex items-center gap-1 rounded-xl bg-violet-500/12 px-2 py-1 text-[11px] font-medium text-violet-700 hover:bg-violet-500/20"
+              className="inline-flex items-center gap-1 rounded-xl bg-[#F4F2EC] px-2 py-1 text-[11px] font-medium text-[#4F46E5] hover:bg-[#EAE6DD]"
             >
               <FileText className="h-3 w-3" />
               Notes
@@ -211,7 +212,7 @@ export function ResourceCard({
           href={resource.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 rounded-xl bg-indigo-600/10 px-3 py-1 text-xs font-semibold text-indigo-700 transition hover:bg-indigo-600 hover:text-white"
+          className="inline-flex items-center gap-1 rounded-xl bg-[#4F46E5]/10 px-3 py-1 text-xs font-semibold text-[#4F46E5] transition hover:bg-[#4F46E5] hover:text-white"
         >
           Open
           <ArrowUpRight className="h-3.5 w-3.5" />

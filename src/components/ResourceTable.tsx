@@ -46,12 +46,12 @@ const STATUS_ICON: Record<
 > = {
   todo: {
     label: "Todo",
-    color: "text-slate-400 hover:text-slate-700",
+    color: "text-stone-400 hover:text-stone-700",
     Icon: Circle,
   },
   in_progress: {
     label: "In Progress",
-    color: "text-indigo-600",
+    color: "text-[#4F46E5]",
     Icon: PlayCircle,
   },
   completed: {
@@ -70,11 +70,11 @@ export function ResourceTable({
   onDeleteCustom,
 }: ResourceTableProps) {
   return (
-    <div className="glass-panel overflow-hidden rounded-2xl">
+    <div className="overflow-hidden rounded-2xl border border-[#EAE6DD] bg-white shadow-[0_2px_6px_rgba(28,25,23,0.03)]">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-slate-900/5 bg-white/40 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            <tr className="border-b border-[#EAE6DD] bg-[#F4F2EC] text-[11px] font-semibold uppercase tracking-wider text-stone-500">
               <th className="w-12 py-3.5 pl-4 pr-2">State</th>
               <th className="py-3.5 px-3">Resource</th>
               <th className="hidden py-3.5 px-3 md:table-cell">Platform</th>
@@ -84,7 +84,7 @@ export function ResourceTable({
               <th className="py-3.5 pl-2 pr-4 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-900/5">
+          <tbody className="divide-y divide-[#EAE6DD]">
             {resources.map((res) => {
               const p = getProgress(res.id);
               const s = STATUS_ICON[p.status];
@@ -95,7 +95,7 @@ export function ResourceTable({
                 <tr
                   key={res.id}
                   onClick={() => onOpenDetails(res)}
-                  className="cursor-pointer transition hover:bg-white/60"
+                  className="cursor-pointer transition hover:bg-[#FAF9F5]"
                 >
                   <td
                     className="py-3 pl-4 pr-2"
@@ -113,19 +113,19 @@ export function ResourceTable({
 
                   <td className="py-3 px-3">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-slate-900 hover:text-indigo-600">
+                      <span className="font-semibold text-stone-900 hover:text-[#4F46E5]">
                         {res.title}
                       </span>
                       {hasNotes && (
-                        <FileText className="h-3.5 w-3.5 shrink-0 text-violet-600" />
+                        <FileText className="h-3.5 w-3.5 shrink-0 text-[#4F46E5]" />
                       )}
                     </div>
-                    <div className="mt-0.5 text-xs text-slate-500 md:hidden">
+                    <div className="mt-0.5 text-xs text-stone-500 md:hidden">
                       {res.platform} · {res.category}
                     </div>
                   </td>
 
-                  <td className="hidden py-3 px-3 text-xs font-medium text-slate-700 md:table-cell">
+                  <td className="hidden py-3 px-3 text-xs font-medium text-stone-700 md:table-cell">
                     <span className="inline-flex items-center gap-1.5">
                       <span
                         className={`h-2 w-2 rounded-full ${PLATFORM_DOT[res.platform]}`}
@@ -134,7 +134,7 @@ export function ResourceTable({
                     </span>
                   </td>
 
-                  <td className="hidden py-3 px-3 text-xs text-slate-600 lg:table-cell">
+                  <td className="hidden py-3 px-3 text-xs text-stone-600 lg:table-cell">
                     {res.category}
                   </td>
 
@@ -159,7 +159,7 @@ export function ResourceTable({
                         className={`rounded-lg p-1.5 transition ${
                           p.bookmarked
                             ? "text-amber-600"
-                            : "text-slate-400 hover:text-slate-700"
+                            : "text-stone-400 hover:text-stone-700"
                         }`}
                       >
                         <Bookmark
@@ -172,7 +172,7 @@ export function ResourceTable({
                         <button
                           type="button"
                           onClick={() => onDeleteCustom(res.id)}
-                          className="rounded-lg p-1.5 text-slate-400 hover:text-rose-600"
+                          className="rounded-lg p-1.5 text-stone-400 hover:text-rose-600"
                         >
                           <Trash2 className="h-3.5 w-3.5" />
                         </button>
@@ -182,7 +182,7 @@ export function ResourceTable({
                         href={res.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 rounded-lg bg-indigo-600/10 px-2.5 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-600 hover:text-white"
+                        className="inline-flex items-center gap-1 rounded-lg bg-[#4F46E5]/10 px-2.5 py-1 text-xs font-semibold text-[#4F46E5] transition hover:bg-[#4F46E5] hover:text-white"
                       >
                         Open
                         <ArrowUpRight className="h-3.5 w-3.5" />
