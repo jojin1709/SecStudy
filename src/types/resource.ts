@@ -29,6 +29,8 @@ export type Category =
   | "OSINT & Forensics"
   | "Defensive & SOC"
   | "Cloud Security"
+  | "Mobile Security"
+  | "AI & LLM Security"
   | "Career & Cert Prep"
   | "Tools & Cheat Sheets";
 

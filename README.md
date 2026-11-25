@@ -4,7 +4,7 @@
 
 <h1>SecStudy</h1>
 
-<p><strong>Free Security Hub — 126 verified free cybersecurity resources across 7 guided pathways</strong></p>
+<p><strong>Free Security Hub — 140 verified free cybersecurity resources across 7 guided pathways</strong></p>
 
 <p>
   Organize free <a href="https://tryhackme.com/">TryHackMe</a> rooms &amp; career tracks, <a href="https://www.hackthebox.com/">Hack The Box</a> labs, <a href="https://www.vulnhub.com/">VulnHub</a> VMs, all 32 <a href="https://portswigger.net/web-security/all-labs">PortSwigger Web Security Academy</a> topics, CTFs, Blue Team/Cloud labs, and job-ready prep without hitting paywalls. Track progress, save notes locally, and launch labs straight from your browser.
@@ -21,7 +21,7 @@
   <img src="https://img.shields.io/badge/Next.js-15-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 15" />
   <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Resources-126_Free-059669?style=flat-square" alt="126 Free Resources" />
+  <img src="https://img.shields.io/badge/Resources-140_Free-059669?style=flat-square" alt="140 Free Resources" />
   <img src="https://img.shields.io/badge/Roadmaps-7_Paths-4F46E5?style=flat-square" alt="7 Roadmaps" />
 </p>
 
@@ -86,17 +86,17 @@ Many cybersecurity tools default to dark matrix/cyberpunk themes that feel visua
 
 ## Curated Free Catalog
 
-SecStudy ships with **126 verified free resources** across 7 structured platforms:
+SecStudy ships with **140 verified free resources** across 7 structured platforms:
 
 | Platform / Group | Count | Highlights Included | Free Access Model |
 | --- | :---: | --- | --- |
 | **TryHackMe** | 57 | OpenVPN, Pre Security &amp; Cyber 101, Linux 1–3, Windows 1–3, Networking, HTTP, Further Nmap, Hydra, Metasploit Intro, Linux PrivEsc, OWASP Juice Shop, Attacktive Directory, Wreath, 4 Official Career Tracks (`Security Analyst`, `Penetration Tester`, `Security Engineer`, `AI Security`), and 22+ free CTFs | Free rooms &amp; unlimited lab time via OpenVPN |
 | **Hack The Box** | 10 | Starting Point Tier 0–2, Active Machines Pool, Active Challenges, and HTB Academy Tier 0 (0-Cube) modules | Free account + OpenVPN / 0-Cube modules |
-| **VulnHub** | 11 | `Basic Pentesting 1`, `Kioptrix 1 & 2`, `DC-1`, `Lampião 1`, `Billu_b0x`, `Symfonos 1`, `Stapler 1`, `Mr-Robot 1`, `Tr0ll 1 & 2` | 100% free downloadable VMs |
-| **Bug Bounty &amp; Web** | 16 | All 32 PortSwigger Web Security Academy topics (`#1`–`#10` + Mystery Labs covering SQLi, XSS, CSRF, SSRF, XXE, SSTI, Deserialization, OAuth, JWT, API/GraphQL, Request Smuggling, Cache Poisoning, Race Conditions, Prototype Pollution, Web LLM &amp; MCP Server Vulns), Hacker101, Bugcrowd University, OWASP Juice Shop, PentesterLab, Hacktivity | 100% free forever / Free tier |
-| **CTFs &amp; Wargames** | 11 | OverTheWire (`Bandit`, `Natas`, `Leviathan`/`Krypton`), PicoCTF, CryptoHack, pwn.college, Crackmes.one, Microcorruption, CTFtime, Sofia Santos OSINT, OSINT Framework | 100% free forever |
-| **Blue Team &amp; Cloud** | 9 | LetsDefend, CyberDefenders, Blue Team Labs Online, KC7 Cyber (KQL), SadServers, `flaws.cloud` / `flaws2.cloud`, CloudGoat, GOAD (Active Directory), MITRE ATT&amp;CK | 100% free / Free tier |
-| **Career &amp; Tools** | 12 | Cisco NetAcad Junior Analyst &amp; Ethical Hacker, ISC2 CC Prep, Antisyphon ($0 PWYC), OWASP WSTG, GTFOBins, LOLBAS, HackTricks, PayloadsAllTheThings, CyberChef, RevShells, Burp Community, Exploit-DB | 100% free / $0 PWYC |
+| **VulnHub** | 15 | `Basic Pentesting 1`, `Kioptrix 1 & 2`, `DC-1`, `Lampião 1`, `Billu_b0x`, `Symfonos 1`, `Stapler 1`, `Mr-Robot 1`, `Tr0ll 1 & 2`, `CyberSploit 1 & 2`, `Sunset 1`, `Sunset Dawn` | 100% free downloadable VMs |
+| **Bug Bounty &amp; Web** | 18 | All 32 PortSwigger Web Security Academy topics (`#1`–`#10` + Mystery Labs), `OWASP crAPI`, `DVGA` (GraphQL), Hacker101, Bugcrowd University, OWASP Juice Shop, PentesterLab, Hacktivity | 100% free forever / Free tier |
+| **CTFs &amp; Wargames** | 13 | OverTheWire (`Bandit`, `Natas`, `Leviathan`/`Krypton`), PicoCTF, CryptoHack, `Lakera Gandalf / Agent Breaker` (AI), `OWASP MAS Crackmes` (Mobile), pwn.college, Crackmes.one, Microcorruption, CTFtime, Sofia Santos OSINT, OSINT Framework | 100% free forever |
+| **Blue Team &amp; Cloud** | 12 | LetsDefend, CyberDefenders, Blue Team Labs Online, KC7 Cyber (KQL), `Splunk BOTSv3`, `Malware-Traffic-Analysis.net` (PCAPs), SadServers, `flaws.cloud` / `flaws2.cloud`, `Kubernetes Goat`, CloudGoat, GOAD (AD), MITRE ATT&amp;CK | 100% free / Free tier |
+| **Career &amp; Tools** | 15 | Cisco NetAcad Junior Analyst &amp; Ethical Hacker, ISC2 CC Prep, Antisyphon ($0 PWYC), `OWASP LLM Top 10`, `OWASP MASTG`, `MobSF`, OWASP WSTG, GTFOBins, LOLBAS, HackTricks, PayloadsAllTheThings, CyberChef, RevShells, Burp Community, Exploit-DB | 100% free / $0 PWYC |
 
 ## How to Use SecStudy
 
@@ -169,7 +169,7 @@ flowchart TD
 | `src/app/layout.tsx` | Root Next.js layout, metadata, OpenGraph config, and Google Fonts (`Inter` &amp; `JetBrains Mono`) |
 | `src/app/opengraph-image.tsx` | Dynamic social preview card for `secstudy-free.vercel.app` |
 | `src/app/globals.css` | Warm cream (`#F6F4EE`) &amp; seamless SVG topographical contour pattern (`.topo-canvas`) |
-| `src/data/resources.ts` | 126 curated free resources across TryHackMe, HTB, VulnHub, PortSwigger, CTFs, Cloud &amp; Career |
+| `src/data/resources.ts` | 140 curated free resources across TryHackMe, HTB, VulnHub, PortSwigger, Mobile, AI, K8s, Cloud &amp; Career |
 | `src/data/roadmaps.ts` | 7 structured career &amp; bug bounty pathways linked to catalog resource IDs |
 | `src/hooks/useCyberVault.ts` | Local state management, `localStorage` persistence, custom resources, and JSON backup |
 | `src/components/ResourceCard.tsx` | Pure white resource card component with warm stone tags &amp; quick actions |

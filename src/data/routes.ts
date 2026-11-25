@@ -31,9 +31,9 @@ export const SECTION_ROUTES: SectionRoute[] = [
   {
     slug: "resources",
     nav: "all",
-    title: "All 126 Free Cybersecurity Resources | SecStudy",
+    title: "All 140 Free Cybersecurity Resources | SecStudy",
     description:
-      "Search and filter 126 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger Academy topics, CTFs, Blue Team labs, and career tools.",
+      "Search and filter 140 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger Academy topics, API/Mobile/AI/Kubernetes labs, CTFs & tools.",
     priority: 0.9,
   },
   {
@@ -57,7 +57,7 @@ export const SECTION_ROUTES: SectionRoute[] = [
     nav: "VulnHub",
     title: "VulnHub Free Offline Boot2Root VMs | SecStudy",
     description:
-      "11 classic downloadable OSCP-style VulnHub VMs including Kioptrix, Basic Pentesting, DC-1, Stapler, Symfonos, Mr-Robot, and Tr0ll.",
+      "15 classic downloadable OSCP-style VulnHub VMs including Kioptrix, Basic Pentesting, DC-1, Stapler, Symfonos, Mr-Robot, CyberSploit 1-2, Sunset 1 & Dawn.",
     priority: 0.8,
   },
   {

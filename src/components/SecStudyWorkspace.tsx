@@ -67,6 +67,8 @@ const CATEGORIES: ("All" | Category)[] = [
   "OSINT & Forensics",
   "Defensive & SOC",
   "Cloud Security",
+  "Mobile Security",
+  "AI & LLM Security",
   "Career & Cert Prep",
   "Tools & Cheat Sheets",
 ];
@@ -96,7 +98,7 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   all: {
     title: "All Free Resources",
     subtitle:
-      "126 curated TryHackMe rooms, HTB labs, VulnHub VMs, Bug Bounty targets, CTFs, Cloud & Career tracks.",
+      "140 curated TryHackMe rooms, HTB labs, VulnHub VMs, Bug Bounty/API targets, Mobile, AI, Cloud & Career tracks.",
   },
   TryHackMe: {
     title: "TryHackMe Free Rooms & Paths",
@@ -111,7 +113,7 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   VulnHub: {
     title: "VulnHub Free Offline VMs",
     subtitle:
-      "Downloadable OSCP-style VirtualBox/VMware Boot2Root labs (Kioptrix, DC-1, Stapler, Symfonos, Mr-Robot).",
+      "Downloadable OSCP-style VirtualBox/VMware Boot2Root labs (Kioptrix, DC-1, Stapler, Symfonos, CyberSploit 1-2, Sunset 1 & Dawn).",
   },
   "Bug Bounty & Web": {
     title: "Bug Bounty & Web AppSec",
