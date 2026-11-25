@@ -1,38 +1,33 @@
-> [!NOTE]
-> **126 verified free cybersecurity resources across 7 guided pathways:** organize free [TryHackMe](https://tryhackme.com/) rooms &amp; career tracks, [Hack The Box](https://www.hackthebox.com/) labs, [VulnHub](https://www.vulnhub.com/) offline VMs, all 32 [PortSwigger Web Security Academy](https://portswigger.net/web-security/all-labs) topics, CTFs, Blue Team/Cloud labs, and job-ready prep—without hitting paywalls.
-
 <div align="center">
 
-<p>
-  <img src="./src/app/icon.svg" alt="SecStudy Logo" width="72" height="72" />
-</p>
+<img src="./src/app/icon.svg" alt="SecStudy" width="72" height="72" />
 
 <h1>SecStudy</h1>
 
+<p><strong>Free Security Hub — 126 verified free cybersecurity resources across 7 guided pathways</strong></p>
+
 <p>
-  <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 15" />
-  <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Resources-126_Free-4F46E5?style=for-the-badge" alt="126 Free Resources" />
+  Organize free <a href="https://tryhackme.com/">TryHackMe</a> rooms &amp; career tracks, <a href="https://www.hackthebox.com/">Hack The Box</a> labs, <a href="https://www.vulnhub.com/">VulnHub</a> VMs, all 32 <a href="https://portswigger.net/web-security/all-labs">PortSwigger Web Security Academy</a> topics, CTFs, Blue Team/Cloud labs, and job-ready prep without hitting paywalls. Track progress, save notes locally, and launch labs straight from your browser.
 </p>
 
-### A clean workspace to manage free TryHackMe rooms, Hack The Box labs, CTFs, and cybersecurity study roadmaps.
+<p>
+  <a href="https://secstudy-free.vercel.app"><img src="https://img.shields.io/badge/Launch_App-secstudy--free.vercel.app-0B1120?style=for-the-badge&logo=vercel&logoColor=white" alt="Launch SecStudy" /></a>
+  <a href="https://www.jojinjohn.me"><img src="https://img.shields.io/badge/Portfolio-jojinjohn.me-4F46E5?style=for-the-badge" alt="Portfolio" /></a>
+  <a href="https://github.com/jojin1709"><img src="https://img.shields.io/badge/GitHub-jojin1709-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://www.linkedin.com/in/jojin-john/"><img src="https://img.shields.io/badge/LinkedIn-JOJIN_JOHN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+</p>
 
-Track your progress, filter by platform or difficulty, save personal commands &amp; study notes, and follow guided zero-cost tracks from beginner to specialist. **100% free resources, 100% local privacy.**
-
-<p><strong>Use SecStudy Instantly — No Install or Sign-Up Required</strong></p>
-
-### 👉 [Open SecStudy Web App (`secstudy-free.vercel.app`)](https://secstudy-free.vercel.app)
-
-<sub>Open directly in any browser to access all 56 free TryHackMe rooms, Hack The Box labs, CTFs, tools, and roadmaps.</sub>
-
----
-
-[![Open SecStudy](https://img.shields.io/badge/Launch_App-secstudy--free.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://secstudy-free.vercel.app)&nbsp;&nbsp;[![Portfolio](https://img.shields.io/badge/Portfolio-jojinjohn.me-4F46E5?style=for-the-badge)](https://www.jojinjohn.me)&nbsp;&nbsp;[![GitHub](https://img.shields.io/badge/GitHub-jojin1709-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jojin1709)&nbsp;&nbsp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-JOJIN_JOHN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jojin-john/)
-
----
+<p>
+  <img src="https://img.shields.io/badge/Next.js-15-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 15" />
+  <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Resources-126_Free-059669?style=flat-square" alt="126 Free Resources" />
+  <img src="https://img.shields.io/badge/Roadmaps-7_Paths-4F46E5?style=flat-square" alt="7 Roadmaps" />
+</p>
 
 </div>
+
+---
 
 > [!TIP]
 > **No paid subscription needed:** Use the built-in **Free Playbook** tab inside SecStudy to learn how to bypass TryHackMe's 1-hour AttackBox limit via OpenVPN and unlock Hack The Box's free Starting Point, Active Machines Pool, and 0-Cube Academy Tier 0 modules.
@@ -54,8 +49,6 @@ Track your progress, filter by platform or difficulty, save personal commands &a
 - [Common Questions](#common-questions)
   - [Are all listed rooms and platforms actually free?](#are-all-listed-rooms-and-platforms-actually-free)
   - [Where are my notes and completed rooms stored?](#where-are-my-notes-and-completed-rooms-stored)
-  - [Can I add my own TryHackMe rooms, HTB boxes, or CTF links?](#can-i-add-my-own-tryhackme-rooms-htb-boxes-or-ctf-links)
-  - [How do I move my progress to another computer?](#how-do-i-move-my-progress-to-another-computer)
 
 ## What is SecStudy?
 
@@ -110,7 +103,7 @@ SecStudy ships with **126 verified free resources** across 7 structured platform
 No installation, terminal setup, or account is required—everything runs right in your browser:
 
 1. **Open the live site:** Go to **[https://secstudy-free.vercel.app](https://secstudy-free.vercel.app)**.
-2. **Pick your platform or roadmap:** Browse **TryHackMe**, **Hack The Box**, **CTFs &amp; Wargames**, **Tools &amp; Docs**, or follow one of the 5 **Roadmaps**.
+2. **Pick your platform or roadmap:** Browse **TryHackMe**, **Hack The Box**, **VulnHub**, **Bug Bounty &amp; Web**, **CTFs &amp; Wargames**, **Blue Team &amp; Cloud**, **Career &amp; Tools**, or follow one of the **7 Guided Pathways**.
 3. **Track your progress &amp; notes:** Click any card to view its **Free Access Tip**, mark it `Todo` / `In Progress` / `Completed`, bookmark favorites, and save personal commands/notes locally in your browser.
 4. **Access free labs:** Click **Open** on any resource to jump straight to the official free room, lab, or tool.
 
@@ -172,6 +165,7 @@ flowchart TD
 | Path | Purpose |
 | --- | --- |
 | `src/app/page.tsx` | Main workspace, white sidebar &amp; navbar, search, filters, and Free Playbook |
+| `src/app/icon.svg` | Stacked isometric "S" monogram SVG browser favicon &amp; brand mark |
 | `src/app/layout.tsx` | Root Next.js layout, metadata, OpenGraph config, and Google Fonts (`Inter` &amp; `JetBrains Mono`) |
 | `src/app/opengraph-image.tsx` | Dynamic social preview card for `secstudy-free.vercel.app` |
 | `src/app/globals.css` | Warm cream (`#F6F4EE`) &amp; seamless SVG topographical contour pattern (`.topo-canvas`) |
