@@ -1,4 +1,4 @@
-import { Platform } from "@/types/resource";
+﻿import { Platform } from "@/types/resource";
 
 export const SITE_URL = "https://secstudy-free.vercel.app";
 
@@ -105,7 +105,7 @@ export const SECTION_ROUTES: SectionRoute[] = [
     nav: "about",
     title: "About JOJIN JOHN & SecStudy Story | SecStudy",
     description:
-      "Learn why JOJIN JOHN built SecStudy to organize 126 verified free cybersecurity resources and connect on LinkedIn, GitHub, and portfolio.",
+      "Learn why JOJIN JOHN built SecStudy to organize 640+ verified free cybersecurity resources and connect on LinkedIn, GitHub, and portfolio.",
     priority: 0.7,
   },
 ];

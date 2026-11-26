@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -99,7 +99,7 @@ const NAV_TITLES: Record<ActiveNav, { title: string; subtitle: string }> = {
   all: {
     title: "All Free Resources",
     subtitle:
-      "157 curated TryHackMe rooms, HTB labs, VulnHub VMs, Bug Bounty, Android, Web3, AI, Cloud & Career tracks.",
+      "640+ TryHackMe rooms, HTB labs, VulnHub VMs, Bug Bounty, Android, Web3, AI, Cloud & Career tracks.",
   },
   TryHackMe: {
     title: "TryHackMe Free Rooms & Paths",

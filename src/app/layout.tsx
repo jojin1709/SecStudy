@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://secstudy-free.vercel.app"),
   title: "SecStudy | Free TryHackMe, Hack The Box, CTFs & Learning Hub",
   description:
-    "Organize and track 157 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger topics, Android/API/Web3/Kubernetes/AI labs, CTFs, and 7 guided roadmaps.",
+    "Organize and track 640+ verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger topics, Android/API/Web3/Kubernetes/AI labs, CTFs, and 7 guided roadmaps.",
   keywords: [
     "SecStudy",
     "free cybersecurity resources",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SecStudy — Free Cybersecurity Rooms, HTB Labs, VulnHub & CTFs",
     description:
-      "157 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger topics, Android/API/Web3/Kubernetes/AI labs, CTFs, and 7 guided pathways.",
+      "640+ verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger topics, Android/API/Web3/Kubernetes/AI labs, CTFs, and 7 guided pathways.",
     url: "https://secstudy-free.vercel.app",
     siteName: "SecStudy",
     type: "website",
@@ -70,7 +70,7 @@ export default function RootLayout({
     alternateName: "SecStudy Free Security Hub",
     url: "https://secstudy-free.vercel.app",
     description:
-      "Free cybersecurity study hub organizing 157 verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger Academy topics, Android bug bounty labs, Web3 smart contract wargames, and 7 guided roadmaps.",
+      "Free cybersecurity study hub organizing 640+ verified free TryHackMe rooms, Hack The Box labs, VulnHub VMs, PortSwigger Academy topics, Android bug bounty labs, Web3 smart contract wargames, and 7 guided roadmaps.",
     applicationCategory: "EducationalApplication",
     operatingSystem: "Web",
     isAccessibleForFree: true,

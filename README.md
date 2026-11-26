@@ -1,10 +1,10 @@
-<div align="center">
+﻿<div align="center">
 
 <img src="./src/app/icon.svg" alt="SecStudy" width="72" height="72" />
 
 <h1>SecStudy</h1>
 
-<p><strong>Free Security Hub — 466 verified free cybersecurity resources across 7 guided pathways</strong></p>
+<p><strong>Free Security Hub — 640 verified free cybersecurity resources across 7 guided pathways</strong></p>
 
 <p>
   Organize free <a href="https://tryhackme.com/">TryHackMe</a> rooms &amp; career tracks, <a href="https://www.hackthebox.com/">Hack The Box</a> labs, <a href="https://www.vulnhub.com/">VulnHub</a> VMs, all 32 <a href="https://portswigger.net/web-security/all-labs">PortSwigger Web Security Academy</a> topics, CTFs, Blue Team/Cloud labs, and job-ready prep without hitting paywalls. Track progress, save notes locally, and launch labs straight from your browser.
@@ -21,7 +21,7 @@
   <img src="https://img.shields.io/badge/Next.js-15-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 15" />
   <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Resources-466_Free-059669?style=flat-square" alt="466 Free Resources" />
+  <img src="https://img.shields.io/badge/Resources-640_Free-059669?style=flat-square" alt="466 Free Resources" />
   <img src="https://img.shields.io/badge/Roadmaps-7_Paths-4F46E5?style=flat-square" alt="7 Roadmaps" />
 </p>
 
@@ -86,7 +86,7 @@ Many cybersecurity tools default to dark matrix/cyberpunk themes that feel visua
 
 ## Curated Free Catalog
 
-SecStudy ships with **466 verified free resources** across 7 structured platforms:
+SecStudy ships with **640 verified free resources** across 7 structured platforms:
 
 | Platform / Group | Count | Highlights Included | Free Access Model |
 | --- | :---: | --- | --- |

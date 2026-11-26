@@ -93,7 +93,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            157 curated free resources across TryHackMe, Hack The Box, VulnHub,
+            640+ curated free resources across TryHackMe, Hack The Box, VulnHub,
             PortSwigger, Android, API, Web3, K8s, AI &amp; 7 pathways.
           </span>
         </div>
